@@ -1,0 +1,106 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 480,
+  "title": {
+    "text": "The Continental Footprint of Australian Playgrounds (n = 2,239)",
+    "subtitle": "Spatial distribution across Australian states by urban classification (Click legend to highlight cohort)",
+    "font": "Merriweather",
+    "fontSize": 16,
+    "subtitleFont": "Plus Jakarta Sans",
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "projection": {
+    "type": "equirectangular",
+    "center": [134, -28.5],
+    "scale": 750
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/aus_states.topojson",
+        "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F1F5F9",
+        "stroke": "#CBD5E1",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {"url": "data/osm_playgrounds_clean.csv"},
+      "params": [
+        {
+          "name": "cohort_highlight",
+          "select": {"type": "point", "fields": ["Urban_Cohort"]},
+          "bind": "legend"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.3
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "size": {
+          "field": "meta_versions_number",
+          "type": "quantitative",
+          "title": "OSM Edit Versions",
+          "scale": {"type": "threshold", "domain": [2, 5, 10], "range": [20, 45, 80, 130]}
+        },
+        "color": {
+          "field": "Urban_Cohort",
+          "type": "nominal",
+          "title": "Geographic Cohort",
+          "scale": {
+            "domain": ["Metropolitan", "Regional & Rural"],
+            "range": ["#0F766E", "#D95F02"]
+          }
+        },
+        "opacity": {
+          "condition": {"param": "cohort_highlight", "value": 0.7},
+          "value": 0.1
+        },
+        "tooltip": [
+          {"field": "Name_Clean", "type": "nominal", "title": "Playground"},
+          {"field": "meta_name_sub", "type": "nominal", "title": "Suburb"},
+          {"field": "meta_name_area", "type": "nominal", "title": "Council (LGA)"},
+          {"field": "meta_name_state", "type": "nominal", "title": "State"},
+          {"field": "Urban_Cohort", "type": "nominal", "title": "Cohort"},
+          {"field": "meta_users_number", "type": "quantitative", "title": "OSM Contributors"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 151.5,
+            "lat": -33.8,
+            "note": "Eastern Seaboard Concentration:;VIC (32.6%), NSW (25.8%) & QLD (21.7%);account for 80.1% of national sites."
+          }
+        ]
+      },
+      "transform": [{"calculate": "split(datum.note, ';')", "as": "note_lines"}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 14,
+        "dy": -8,
+        "fontSize": 11.5,
+        "fontWeight": "bold",
+        "color": "#0F172A"
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "note_lines"}
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}

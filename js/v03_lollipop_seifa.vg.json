@@ -1,0 +1,90 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 340,
+    "title": {
+      "text": "Play Provision Across ABS SEIFA Deciles",
+      "subtitle": "Average documented playgrounds per council by SEIFA Decile (1 = Most Disadvantaged, 10 = Most Advantaged)",
+      "font": "Merriweather",
+      "fontSize": 15,
+      "subtitleFont": "Plus Jakarta Sans",
+      "subtitleFontSize": 11.5,
+      "anchor": "start"
+    },
+    "data": {"url": "data/lga_seifa_clean.csv"},
+    "transform": [
+      {
+        "aggregate": [
+          {"op": "mean", "field": "Playground_Count", "as": "Mean_Playgrounds"},
+          {"op": "sum", "field": "Playground_Count", "as": "Total_Playgrounds"},
+          {"op": "count", "as": "Council_Count"},
+          {"op": "mean", "field": "Score", "as": "Mean_SEIFA"}
+        ],
+        "groupby": ["Decile"]
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "Decile",
+        "type": "ordinal",
+        "title": "ABS SEIFA Decile (1 = Lowest Socioeconomic Status, 10 = Highest)",
+        "axis": {"labelAngle": 0}
+      },
+      "y": {
+        "field": "Mean_Playgrounds",
+        "type": "quantitative",
+        "title": "Mean Playgrounds per LGA",
+        "scale": {"domain": [0, 12]}
+      }
+    },
+    "layer": [
+      {
+        "mark": {"type": "bar", "width": 3.5, "color": "#94A3B8"}
+      },
+      {
+        "mark": {"type": "circle", "size": 240, "opacity": 1},
+        "encoding": {
+          "color": {
+            "field": "Decile",
+            "type": "ordinal",
+            "legend": null,
+            "scale": {"scheme": "tealblues"}
+          },
+          "tooltip": [
+            {"field": "Decile", "type": "ordinal", "title": "SEIFA Decile"},
+            {"field": "Mean_Playgrounds", "type": "quantitative", "title": "Mean Playgrounds per LGA", "format": ".2f"},
+            {"field": "Total_Playgrounds", "type": "quantitative", "title": "Total Playgrounds in Decile", "format": ","},
+            {"field": "Council_Count", "type": "quantitative", "title": "Number of Councils (LGAs)"},
+            {"field": "Mean_SEIFA", "type": "quantitative", "title": "Mean SEIFA Score", "format": ".0f"}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "rule",
+          "color": "#D95F02",
+          "strokeDash": [5, 4],
+          "strokeWidth": 1.5
+        },
+        "encoding": {
+          "y": {"aggregate": "mean", "field": "Mean_Playgrounds"}
+        }
+      },
+      {
+        "transform": [{"filter": "datum.Decile == 1"}],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": 10,
+          "dy": -12,
+          "fontSize": 11,
+          "fontWeight": "bold",
+          "color": "#D95F02"
+        },
+        "encoding": {
+          "text": {"value": "Decile 1: Only 0.96 parks/LGA vs 10.67 in Decile 10"}
+        }
+      }
+    ],
+    "config": {"view": {"stroke": null}}
+  }

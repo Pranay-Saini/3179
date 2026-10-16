@@ -1,0 +1,75 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 340,
+    "title": {
+      "text": "Diverging Trajectories: Metro vs Regional Grants",
+      "subtitle": "Mean grant size from Round 1 (2018/19) to Round 4 (2021/22): Metro (+42.6%) vs Regional (-12.5%)",
+      "font": "Merriweather",
+      "fontSize": 15,
+      "subtitleFont": "Plus Jakarta Sans",
+      "subtitleFontSize": 11.5,
+      "anchor": "start"
+    },
+    "data": {"url": "data/nsw_everyone_can_play_clean.csv"},
+    "transform": [
+      {"filter": "datum.Year == '2018/19' || datum.Year == '2021/22'"},
+      {
+        "aggregate": [{"op": "mean", "field": "Amount", "as": "Mean_Grant"}],
+        "groupby": ["Year", "Council_Cohort"]
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Funding Benchmark Round",
+        "axis": {"labelAngle": 0, "labelFontWeight": "bold"}
+      },
+      "y": {
+        "field": "Mean_Grant",
+        "type": "quantitative",
+        "title": "Mean Project Grant ($ AUD)",
+        "scale": {"domain": [90000, 170000]},
+        "axis": {"format": "$,.0f"}
+      },
+      "color": {
+        "field": "Council_Cohort",
+        "type": "nominal",
+        "title": "Council Cohort",
+        "scale": {
+          "domain": ["Metropolitan", "Regional & Rural"],
+          "range": ["#0F766E", "#D95F02"]
+        }
+      }
+    },
+    "layer": [
+      {
+        "mark": {"type": "line", "strokeWidth": 3.5}
+      },
+      {
+        "mark": {"type": "point", "filled": true, "size": 150},
+        "encoding": {
+          "tooltip": [
+            {"field": "Council_Cohort", "type": "nominal", "title": "Cohort"},
+            {"field": "Year", "type": "ordinal", "title": "Financial Year"},
+            {"field": "Mean_Grant", "type": "quantitative", "title": "Mean Grant ($)", "format": "$,.0f"}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": 10,
+          "dy": -6,
+          "fontWeight": "bold",
+          "fontSize": 11.5
+        },
+        "encoding": {
+          "text": {"field": "Mean_Grant", "type": "quantitative", "format": "$,.0f"}
+        }
+      }
+    ],
+    "config": {"view": {"stroke": null}}
+  }

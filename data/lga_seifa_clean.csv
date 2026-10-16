@@ -1,0 +1,548 @@
+LGA Code,Region,Score,Decile,State_Abbr,meta_code_area,Playground_Count,Surface_Audited_Count,Wheelchair_Audited_Count,Wheelchair_Yes_Count,Rubber_Surface_Count,Toilets_Served_Count,Mean_Contributors,Urban_Cohort,Surface_Audit_Pct,Toilet_CoLocation_Pct
+10050,Albury,950.0,5,NSW,10050.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+10180,Armidale Regional,976.0,7,NSW,10180.0,1,0,0,0,0,0,2.0,Regional & Rural,0.0,0.0
+10250,Ballina,996.0,8,NSW,10250.0,12,0,0,0,0,12,1.0833333333333333,Regional & Rural,0.0,100.0
+10300,Balranald,934.0,4,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+10470,Bathurst Regional,967.0,7,NSW,10470.0,5,1,0,0,0,1,1.2,Regional & Rural,20.0,20.0
+10500,Bayside (NSW),1044.0,9,NSW,10500.0,9,5,0,0,0,4,1.5555555555555556,Metropolitan,55.6,44.4
+10550,Bega Valley,949.0,5,NSW,10550.0,3,0,0,0,0,2,1.0,Regional & Rural,0.0,66.7
+10600,Bellingen,960.0,6,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+10650,Berrigan,927.0,4,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+10750,Blacktown,1006.0,8,NSW,10750.0,32,3,1,0,0,10,1.3125,Metropolitan,9.4,31.2
+10800,Bland,958.0,6,NSW,10800.0,2,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+10850,Blayney,962.0,6,NSW,10850.0,3,0,0,0,0,1,1.0,Regional & Rural,0.0,33.3
+10900,Blue Mountains,1042.0,9,NSW,10900.0,4,1,0,0,0,0,1.75,Regional & Rural,25.0,0.0
+10950,Bogan,948.0,5,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+11150,Bourke,954.0,6,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+11200,Brewarrina,866.0,1,NSW,11200.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+11250,Broken Hill,892.0,2,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+11300,Burwood,1050.0,9,NSW,11300.0,5,0,0,0,0,0,1.8,Metropolitan,0.0,0.0
+11350,Byron,1027.0,9,NSW,11350.0,1,1,0,0,0,0,1.0,Regional & Rural,100.0,0.0
+11400,Cabonne,995.0,8,NSW,11400.0,1,1,0,0,0,1,2.0,Regional & Rural,100.0,100.0
+11450,Camden,1050.0,9,NSW,11450.0,5,0,0,0,0,3,1.2,Metropolitan,0.0,60.0
+11500,Campbelltown (NSW),952.0,5,NSW,11500.0,9,0,0,0,0,2,1.2222222222222223,Metropolitan,0.0,22.2
+11520,Canada Bay,1116.0,10,NSW,11520.0,4,0,0,0,0,3,2.25,Metropolitan,0.0,75.0
+11570,Canterbury-Bankstown,966.0,7,NSW,11570.0,3,0,0,0,0,0,2.0,Metropolitan,0.0,0.0
+11600,Carrathool,953.0,6,NSW,11600.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+11650,Central Coast (NSW),978.0,7,NSW,11650.0,20,1,0,0,0,9,1.6,Regional & Rural,5.0,45.0
+11700,Central Darling,869.0,1,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+11720,Cessnock,908.0,3,NSW,11720.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+11730,Clarence Valley,910.0,3,NSW,11730.0,3,0,0,0,0,1,1.6666666666666667,Regional & Rural,0.0,33.3
+11750,Cobar,937.0,4,NSW,11750.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+11800,Coffs Harbour,954.0,6,NSW,11800.0,8,0,0,0,0,6,1.75,Regional & Rural,0.0,75.0
+12000,Coolamon,951.0,5,NSW,12000.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+12150,Coonamble,893.0,2,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+12160,Cootamundra-Gundagai Regional,926.0,3,NSW,12160.0,3,0,0,0,0,1,1.6666666666666667,Regional & Rural,0.0,33.3
+12350,Cowra,908.0,2,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+12380,Cumberland,961.0,6,NSW,12380.0,10,0,0,0,0,7,1.9,Metropolitan,0.0,70.0
+12390,Dubbo Regional,958.0,6,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+12700,Dungog,974.0,7,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+12730,Edward River,939.0,4,NSW,12730.0,1,0,1,0,0,1,3.0,Regional & Rural,0.0,100.0
+12750,Eurobodalla,946.0,5,NSW,12750.0,2,0,0,0,0,1,1.5,Regional & Rural,0.0,50.0
+12850,Fairfield,885.0,2,NSW,12850.0,7,1,0,0,1,3,1.5714285714285714,Metropolitan,14.3,42.9
+12870,Federation,925.0,3,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+12900,Forbes,941.0,5,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+12930,Georges River,1048.0,9,NSW,12930.0,8,2,1,1,1,6,1.75,Metropolitan,25.0,75.0
+12950,Gilgandra,913.0,3,NSW,12950.0,3,2,0,0,0,3,2.0,Regional & Rural,66.7,100.0
+13010,Glen Innes Severn,891.0,2,NSW,13010.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+13310,Goulburn Mulwaree,945.0,5,NSW,13310.0,5,1,0,0,0,3,1.4,Regional & Rural,20.0,60.0
+13340,Greater Hume Shire,964.0,6,NSW,13340.0,2,0,0,0,0,1,1.0,Regional & Rural,0.0,50.0
+13450,Griffith,950.0,5,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+13550,Gunnedah,940.0,4,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+13660,Gwydir,936.0,4,NSW,13660.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+13800,Hawkesbury,1008.0,9,NSW,13800.0,1,0,0,0,0,0,2.0,Metropolitan,0.0,0.0
+13850,Hay,926.0,3,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+13910,Hilltops,929.0,4,NSW,13910.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+14000,Hornsby,1116.0,10,NSW,14000.0,15,1,0,0,0,13,2.0,Metropolitan,6.7,86.7
+14100,Hunters Hill,1156.0,10,NSW,14100.0,1,1,0,0,0,1,1.0,Metropolitan,100.0,100.0
+14170,Inner West,1118.0,10,NSW,14170.0,31,3,0,0,0,13,1.903225806451613,Metropolitan,9.7,41.9
+14220,Inverell,906.0,2,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+14300,Junee,918.0,3,NSW,14300.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+14350,Kempsey,881.0,2,NSW,14350.0,2,0,0,0,0,2,1.5,Regional & Rural,0.0,100.0
+14400,Kiama,1061.0,9,NSW,14400.0,1,1,0,0,1,1,1.0,Regional & Rural,100.0,100.0
+14500,Ku-ring-gai,1165.0,10,NSW,14500.0,15,5,1,0,0,4,2.466666666666667,Metropolitan,33.3,26.7
+14550,Kyogle,906.0,2,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+14600,Lachlan,936.0,4,NSW,14600.0,5,0,0,0,0,4,1.2,Regional & Rural,0.0,80.0
+14650,Lake Macquarie,981.0,7,NSW,14650.0,5,0,0,0,0,1,2.2,Regional & Rural,0.0,20.0
+14700,Lane Cove,1162.0,10,NSW,14700.0,5,0,0,0,0,5,1.0,Metropolitan,0.0,100.0
+14750,Leeton,922.0,3,NSW,14750.0,2,0,0,0,0,1,1.5,Regional & Rural,0.0,50.0
+14850,Lismore,945.0,5,NSW,14850.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+14870,Lithgow,912.0,3,NSW,14870.0,2,0,0,0,0,2,3.5,Regional & Rural,0.0,100.0
+14900,Liverpool,968.0,7,NSW,14900.0,3,0,0,0,0,3,1.0,Metropolitan,0.0,100.0
+14920,Liverpool Plains,905.0,2,NSW,14920.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+14950,Lockhart,950.0,5,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+15050,Maitland,963.0,6,NSW,15050.0,18,3,0,0,0,1,1.3888888888888888,Regional & Rural,16.7,5.6
+15240,Mid-Coast,912.0,3,NSW,15240.0,6,0,0,0,0,4,1.6666666666666667,Regional & Rural,0.0,66.7
+15270,Mid-Western Regional,949.0,5,NSW,15270.0,3,0,0,0,0,3,1.3333333333333333,Regional & Rural,0.0,100.0
+15300,Moree Plains,932.0,4,NSW,15300.0,2,0,0,0,0,0,1.5,Metropolitan,0.0,0.0
+15350,Mosman,1169.0,10,NSW,15350.0,5,1,0,0,0,5,1.4,Metropolitan,20.0,100.0
+15520,Murray River,965.0,7,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+15560,Murrumbidgee,951.0,5,NSW,15560.0,2,1,0,0,0,2,2.0,Regional & Rural,50.0,100.0
+15650,Muswellbrook,908.0,2,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+15700,Nambucca Valley,898.0,2,NSW,15700.0,1,0,0,0,0,1,3.0,Regional & Rural,0.0,100.0
+15750,Narrabri,936.0,4,NSW,15750.0,1,0,0,0,0,0,2.0,Regional & Rural,0.0,0.0
+15800,Narrandera,910.0,3,NSW,15800.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+15850,Narromine,934.0,4,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+15900,Newcastle,1012.0,9,NSW,15900.0,10,0,0,0,0,7,1.2,Regional & Rural,0.0,70.0
+15950,North Sydney,1164.0,10,NSW,15950.0,26,1,0,0,0,21,2.3076923076923075,Metropolitan,3.8,80.8
+15990,Northern Beaches,1125.0,10,NSW,15990.0,50,13,3,1,1,31,1.74,Metropolitan,26.0,62.0
+16100,Oberon,948.0,5,NSW,16100.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+16150,Orange,979.0,7,NSW,16150.0,3,0,0,0,0,3,2.6666666666666665,Regional & Rural,0.0,100.0
+16200,Parkes,922.0,3,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+16260,Parramatta,1070.0,10,NSW,16260.0,42,1,1,1,1,28,1.5,Metropolitan,2.4,66.7
+16350,Penrith,981.0,8,NSW,16350.0,3,0,0,0,0,2,1.0,Metropolitan,0.0,66.7
+16380,Port Macquarie-Hastings,958.0,6,NSW,16380.0,11,0,0,0,0,9,1.5454545454545454,Regional & Rural,0.0,81.8
+16400,Port Stephens,952.0,5,NSW,16400.0,1,0,0,0,0,1,2.0,Regional & Rural,0.0,100.0
+16490,Queanbeyan-Palerang Regional,1062.0,9,NSW,16490.0,16,0,0,0,0,14,2.3125,Regional & Rural,0.0,87.5
+16550,Randwick,1113.0,10,NSW,16550.0,3,0,0,0,0,3,2.3333333333333335,Metropolitan,0.0,100.0
+16610,Richmond Valley,892.0,2,NSW,16610.0,1,0,0,0,0,1,3.0,Regional & Rural,0.0,100.0
+16700,Ryde,1099.0,10,NSW,16700.0,5,0,0,0,0,3,1.2,Metropolitan,0.0,60.0
+16900,Shellharbour,962.0,6,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+16950,Shoalhaven,949.0,5,NSW,16950.0,6,0,0,0,0,6,1.6666666666666667,Regional & Rural,0.0,100.0
+17000,Singleton,965.0,7,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+17040,Snowy Monaro Regional,991.0,8,NSW,17040.0,2,1,0,0,0,0,1.5,Metropolitan,50.0,0.0
+17080,Snowy Valleys,923.0,3,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+17100,Strathfield,1066.0,10,NSW,17100.0,1,0,0,0,0,1,1.0,Metropolitan,0.0,100.0
+17150,Sutherland Shire,1090.0,10,NSW,17150.0,10,1,0,0,0,5,2.1,Metropolitan,10.0,50.0
+17200,Sydney,1126.0,10,NSW,17200.0,14,0,4,3,0,11,3.2142857142857144,Metropolitan,0.0,78.6
+17310,Tamworth Regional,937.0,4,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+17350,Temora,939.0,4,NSW,17350.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+17400,Tenterfield,903.0,2,NSW,17400.0,1,0,0,0,0,0,2.0,Regional & Rural,0.0,0.0
+17420,The Hills Shire,1136.0,10,NSW,17420.0,17,0,0,0,0,8,1.8823529411764706,Metropolitan,0.0,47.1
+17550,Tweed,967.0,7,NSW,17550.0,1,1,0,0,0,0,1.0,Regional & Rural,100.0,0.0
+17620,Upper Hunter Shire,943.0,5,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+17640,Upper Lachlan Shire,995.0,8,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+17650,Uralla,963.0,6,NSW,17650.0,5,3,1,1,0,0,1.0,Metropolitan,60.0,0.0
+17750,Wagga Wagga,971.0,7,NSW,17750.0,4,0,0,0,0,2,2.0,Regional & Rural,0.0,50.0
+17850,Walcha,970.0,7,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+17900,Walgett,896.0,2,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+17950,Warren,952.0,5,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+18020,Warrumbungle Shire,914.0,3,NSW,18020.0,2,0,0,0,0,2,1.0,Regional & Rural,0.0,100.0
+18050,Waverley,1163.0,10,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+18100,Weddin,942.0,5,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+18200,Wentworth,949.0,5,NSW,18200.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+18250,Willoughby,1142.0,10,NSW,18250.0,4,1,0,0,1,3,1.25,Metropolitan,25.0,75.0
+18350,Wingecarribee,1031.0,9,NSW,18350.0,5,0,0,0,0,5,1.4,Regional & Rural,0.0,100.0
+18400,Wollondilly,1020.0,9,NSW,18400.0,2,0,0,0,0,2,1.0,Metropolitan,0.0,100.0
+18450,Wollongong,1000.0,8,NSW,18450.0,19,1,1,0,1,12,2.263157894736842,Regional & Rural,5.3,63.2
+18500,Woollahra,1176.0,10,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+18710,Yass Valley,1062.0,10,NSW,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+19399,Unincorporated NSW,1025.0,9,NSW,19399.0,1,0,0,0,0,0,3.0,Metropolitan,0.0,0.0
+20110,Alpine,989.0,8,VIC,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+20260,Ararat,932.0,4,VIC,20260.0,2,0,0,0,0,2,1.0,Regional & Rural,0.0,100.0
+20570,Ballarat,965.0,7,VIC,20570.0,12,0,0,0,0,5,2.5,Regional & Rural,0.0,41.7
+20660,Banyule,1064.0,10,VIC,20660.0,8,2,0,0,0,2,1.625,Metropolitan,25.0,25.0
+20740,Bass Coast,957.0,6,VIC,20740.0,15,0,0,0,0,4,1.2,Regional & Rural,0.0,26.7
+20830,Baw Baw,971.0,7,VIC,20830.0,6,1,0,0,0,5,2.3333333333333335,Regional & Rural,16.7,83.3
+20910,Bayside (Vic.),1127.0,10,VIC,20910.0,3,0,0,0,0,1,2.3333333333333335,Metropolitan,0.0,33.3
+21010,Benalla,938.0,4,VIC,21010.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+21110,Boroondara,1131.0,10,VIC,21110.0,14,0,0,0,0,7,1.7142857142857142,Metropolitan,0.0,50.0
+21180,Brimbank,928.0,4,VIC,21180.0,27,0,0,0,0,14,1.6296296296296295,Metropolitan,0.0,51.9
+21270,Buloke,946.0,5,VIC,21270.0,3,0,0,0,0,0,1.6666666666666667,Regional & Rural,0.0,0.0
+21370,Campaspe,932.0,4,VIC,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+21450,Cardinia,993.0,8,VIC,21450.0,38,11,0,0,0,14,1.394736842105263,Metropolitan,28.9,36.8
+21610,Casey,986.0,8,VIC,21610.0,32,5,1,0,1,26,1.84375,Metropolitan,15.6,81.2
+21670,Central Goldfields,867.0,1,VIC,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+21750,Colac Otway,938.0,4,VIC,21750.0,3,0,0,0,0,3,1.0,Regional & Rural,0.0,100.0
+21830,Corangamite,955.0,6,VIC,21830.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+21890,Darebin,1044.0,9,VIC,21890.0,6,0,0,0,0,2,2.1666666666666665,Metropolitan,0.0,33.3
+22110,East Gippsland,931.0,4,VIC,22110.0,7,1,0,0,0,4,2.142857142857143,Regional & Rural,14.3,57.1
+22170,Frankston,982.0,8,VIC,22170.0,13,4,0,0,1,8,2.5384615384615383,Metropolitan,30.8,61.5
+22250,Gannawarra,919.0,3,VIC,22250.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+22310,Glen Eira,1103.0,10,VIC,22310.0,2,0,0,0,0,2,1.5,Metropolitan,0.0,100.0
+22410,Glenelg,919.0,3,VIC,22410.0,4,0,0,0,0,1,1.0,Regional & Rural,0.0,25.0
+22490,Golden Plains,997.0,8,VIC,22490.0,5,0,0,0,0,2,1.2,Regional & Rural,0.0,40.0
+22620,Greater Bendigo,959.0,6,VIC,22620.0,24,0,1,0,0,13,1.4583333333333333,Regional & Rural,0.0,54.2
+22670,Greater Dandenong,918.0,3,VIC,22670.0,4,2,0,0,0,4,1.5,Metropolitan,50.0,100.0
+22750,Greater Geelong,990.0,8,VIC,22750.0,29,1,0,0,0,24,2.2413793103448274,Regional & Rural,3.4,82.8
+22830,Greater Shepparton,931.0,4,VIC,22830.0,4,0,0,0,0,3,1.0,Regional & Rural,0.0,75.0
+22910,Hepburn,984.0,8,VIC,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+22980,Hindmarsh,923.0,3,VIC,22980.0,1,0,0,0,0,1,2.0,Regional & Rural,0.0,100.0
+23110,Hobsons Bay,1034.0,9,VIC,23110.0,8,0,0,0,0,1,1.75,Metropolitan,0.0,12.5
+23190,Horsham,959.0,6,VIC,23190.0,4,0,0,0,0,4,1.0,Regional & Rural,0.0,100.0
+23270,Hume,949.0,5,VIC,23270.0,31,0,2,1,0,27,1.3870967741935485,Metropolitan,0.0,87.1
+23350,Indigo,996.0,8,VIC,23350.0,3,1,0,0,0,3,2.0,Regional & Rural,33.3,100.0
+23430,Kingston (Vic.),1048.0,9,VIC,23430.0,18,4,0,0,0,13,1.7222222222222223,Metropolitan,22.2,72.2
+23670,Knox,1029.0,9,VIC,23670.0,12,1,0,0,0,3,1.6666666666666667,Metropolitan,8.3,25.0
+23810,Latrobe (Vic.),907.0,2,VIC,23810.0,54,0,0,0,0,46,1.1666666666666667,Regional & Rural,0.0,85.2
+23940,Loddon,925.0,3,VIC,23940.0,1,0,0,0,0,0,2.0,Metropolitan,0.0,0.0
+24130,Macedon Ranges,1047.0,9,VIC,24130.0,3,0,0,0,0,3,1.3333333333333333,Metropolitan,0.0,100.0
+24210,Manningham,1075.0,10,VIC,24210.0,25,0,0,0,0,25,1.48,Metropolitan,0.0,100.0
+24250,Mansfield,989.0,8,VIC,24250.0,2,1,0,0,0,0,1.0,Metropolitan,50.0,0.0
+24330,Maribyrnong,1045.0,9,VIC,24330.0,10,0,0,0,0,10,1.9,Metropolitan,0.0,100.0
+24410,Maroondah,1035.0,9,VIC,24410.0,31,5,0,0,0,14,1.8064516129032258,Metropolitan,16.1,45.2
+24600,Melbourne,1086.0,10,VIC,24600.0,9,1,0,0,0,4,2.4444444444444446,Metropolitan,11.1,44.4
+24650,Melton,974.0,7,VIC,24650.0,14,0,0,0,0,6,1.1428571428571428,Metropolitan,0.0,42.9
+24780,Mildura,922.0,3,VIC,24780.0,3,2,0,0,0,3,1.6666666666666667,Regional & Rural,66.7,100.0
+24850,Mitchell,968.0,7,VIC,24850.0,1,0,0,0,0,1,2.0,Regional & Rural,0.0,100.0
+24900,Moira,927.0,3,VIC,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+24970,Monash,1067.0,10,VIC,24970.0,8,0,0,0,0,7,2.0,Metropolitan,0.0,87.5
+25060,Moonee Valley,1060.0,9,VIC,25060.0,25,0,0,0,0,22,2.0,Metropolitan,0.0,88.0
+25150,Moorabool,987.0,8,VIC,25150.0,6,0,0,0,0,3,1.3333333333333333,Regional & Rural,0.0,50.0
+25250,Moreland,1049.0,9,VIC,25250.0,2,0,0,0,0,1,2.5,Metropolitan,0.0,50.0
+25340,Mornington Peninsula,1016.0,9,VIC,25340.0,52,3,0,0,0,30,1.2692307692307692,Regional & Rural,5.8,57.7
+25430,Mount Alexander,987.0,8,VIC,25430.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+25490,Moyne,998.0,8,VIC,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+25620,Murrindindi,971.0,7,VIC,25620.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+25710,Nillumbik,1088.0,10,VIC,25710.0,4,0,0,0,0,1,1.75,Metropolitan,0.0,25.0
+25810,Northern Grampians,921.0,3,VIC,25810.0,1,0,0,0,0,1,2.0,Regional & Rural,0.0,100.0
+25900,Port Phillip,1106.0,10,VIC,25900.0,1,0,0,0,0,0,2.0,Metropolitan,0.0,0.0
+25990,Pyrenees,929.0,4,VIC,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+26080,Queenscliffe,1067.0,10,VIC,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+26170,South Gippsland,966.0,7,VIC,26170.0,10,0,0,0,0,4,1.4,Regional & Rural,0.0,40.0
+26260,Southern Grampians,962.0,6,VIC,26260.0,7,1,1,0,0,0,2.142857142857143,Regional & Rural,14.3,0.0
+26350,Stonnington,1130.0,10,VIC,26350.0,2,0,0,0,0,1,1.0,Metropolitan,0.0,50.0
+26430,Strathbogie,954.0,6,VIC,26430.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+26490,Surf Coast,1076.0,10,VIC,26490.0,2,0,0,0,0,2,1.5,Regional & Rural,0.0,100.0
+26610,Swan Hill,927.0,4,VIC,26610.0,10,1,0,0,1,10,1.2,Regional & Rural,10.0,100.0
+26670,Towong,968.0,7,VIC,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+26700,Wangaratta,957.0,6,VIC,26700.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+26730,Warrnambool,961.0,6,VIC,26730.0,1,0,0,0,0,1,2.0,Regional & Rural,0.0,100.0
+26810,Wellington,943.0,5,VIC,26810.0,3,0,0,0,0,0,1.6666666666666667,Regional & Rural,0.0,0.0
+26890,West Wimmera,971.0,7,VIC,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+26980,Whitehorse,1067.0,10,VIC,26980.0,23,2,0,0,1,14,1.608695652173913,Metropolitan,8.7,60.9
+27070,Whittlesea,981.0,7,VIC,27070.0,7,2,0,0,0,2,1.8571428571428572,Metropolitan,28.6,28.6
+27170,Wodonga,947.0,5,VIC,27170.0,10,0,0,0,0,5,1.9,Regional & Rural,0.0,50.0
+27260,Wyndham,1004.0,8,VIC,27260.0,25,4,0,0,0,25,1.44,Metropolitan,16.0,100.0
+27350,Yarra,1108.0,10,VIC,27350.0,20,0,0,0,0,3,1.95,Metropolitan,0.0,15.0
+27450,Yarra Ranges,1014.0,9,VIC,27450.0,9,2,1,0,0,1,2.888888888888889,Metropolitan,22.2,11.1
+27630,Yarriambiack,923.0,3,VIC,27630.0,3,0,0,0,0,3,1.0,Regional & Rural,0.0,100.0
+29399,Unincorporated Vic,1022.0,9,VIC,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+30250,Aurukun,700.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+30300,Balonne,929.0,4,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+30370,Banana,954.0,6,QLD,30370.0,3,0,0,0,0,1,1.0,Regional & Rural,0.0,33.3
+30410,Barcaldine,971.0,7,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+30450,Barcoo,959.0,6,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+30760,Blackall Tambo,930.0,4,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+30900,Boulia,890.0,2,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+31000,Brisbane,1061.0,9,QLD,31000.0,74,34,4,1,0,40,1.7297297297297298,Metropolitan,45.9,54.1
+31750,Bulloo,942.0,5,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+31820,Bundaberg,898.0,2,QLD,31820.0,2,0,0,0,0,2,2.0,Regional & Rural,0.0,100.0
+31900,Burdekin,923.0,3,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+31950,Burke,928.0,4,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+32080,Cairns,966.0,7,QLD,32080.0,65,49,0,0,0,26,1.3692307692307693,Regional & Rural,75.4,40.0
+32250,Carpentaria,862.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+32260,Cassowary Coast,902.0,2,QLD,32260.0,15,4,0,0,0,12,1.3333333333333333,Regional & Rural,26.7,80.0
+32270,Central Highlands (Qld),961.0,6,QLD,32270.0,3,0,0,0,0,1,1.6666666666666667,Regional & Rural,0.0,33.3
+32310,Charters Towers,908.0,2,QLD,32310.0,4,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+32330,Cherbourg,660.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+32450,Cloncurry,939.0,4,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+32500,Cook,912.0,3,QLD,32500.0,2,0,0,0,0,1,1.0,Regional & Rural,0.0,50.0
+32600,Croydon,890.0,2,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+32750,Diamantina,942.0,5,QLD,32750.0,1,1,0,0,0,1,2.0,Regional & Rural,100.0,100.0
+32770,Doomadgee,696.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+32810,Douglas,944.0,5,QLD,32810.0,3,0,0,0,0,0,1.3333333333333333,Metropolitan,0.0,0.0
+33100,Etheridge,961.0,6,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+33200,Flinders (Qld),945.0,5,QLD,33200.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+33220,Fraser Coast,890.0,2,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+33360,Gladstone,926.0,3,QLD,33360.0,1,0,0,0,0,1,2.0,Regional & Rural,0.0,100.0
+33430,Gold Coast,1009.0,9,QLD,33430.0,38,18,0,0,2,29,1.4736842105263157,Metropolitan,47.4,76.3
+33610,Goondiwindi,938.0,4,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+33620,Gympie,896.0,2,QLD,33620.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+33800,Hinchinbrook,911.0,3,QLD,33800.0,3,0,0,0,0,2,1.0,Regional & Rural,0.0,66.7
+33830,Hope Vale,722.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+33960,Ipswich,940.0,4,QLD,33960.0,83,64,0,0,0,36,1.6626506024096386,Metropolitan,77.1,43.4
+33980,Isaac,971.0,7,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+34420,Kowanyama,686.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+34530,Livingstone,970.0,7,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+34570,Lockhart River,744.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+34580,Lockyer Valley,921.0,3,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+34590,Logan,930.0,4,QLD,34590.0,27,12,0,0,1,22,1.4814814814814814,Metropolitan,44.4,81.5
+34710,Longreach,976.0,7,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+34770,Mackay,961.0,6,QLD,34770.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+34800,McKinlay,977.0,7,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+34830,Mapoon,700.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+34860,Maranoa,966.0,7,QLD,34860.0,1,0,0,0,0,1,2.0,Regional & Rural,0.0,100.0
+34880,Mareeba,921.0,3,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+35010,Moreton Bay,970.0,7,QLD,35010.0,43,29,0,0,0,35,1.5348837209302326,Metropolitan,67.4,81.4
+35250,Mornington,747.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+35300,Mount Isa,954.0,6,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+35600,Murweh,930.0,4,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+35670,Napranum,738.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+35740,Noosa,1009.0,9,QLD,35740.0,4,0,1,1,0,4,1.0,Regional & Rural,0.0,100.0
+35760,North Burnett,888.0,2,QLD,35760.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+35780,Northern Peninsula Area,792.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+35790,Palm Island,707.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+35800,Paroo,884.0,2,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+36070,Pormpuraaw,706.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+36150,Quilpie,969.0,7,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+36250,Redland,1003.0,8,QLD,36250.0,27,23,1,1,3,20,1.4074074074074074,Metropolitan,85.2,74.1
+36300,Richmond,975.0,7,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+36370,Rockhampton,924.0,3,QLD,36370.0,19,2,0,0,0,14,1.4210526315789473,Regional & Rural,10.5,73.7
+36510,Scenic Rim,959.0,6,QLD,36510.0,7,0,0,0,0,3,1.2857142857142858,Regional & Rural,0.0,42.9
+36580,Somerset,913.0,3,QLD,36580.0,1,0,0,0,0,1,1.0,Metropolitan,0.0,100.0
+36630,South Burnett,885.0,2,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+36660,Southern Downs,909.0,3,QLD,36660.0,5,0,0,0,0,3,1.2,Regional & Rural,0.0,60.0
+36720,Sunshine Coast,1001.0,8,QLD,36720.0,22,1,0,0,0,14,1.9545454545454546,Regional & Rural,4.5,63.6
+36820,Tablelands,926.0,3,QLD,36820.0,3,0,0,0,0,2,1.0,Regional & Rural,0.0,66.7
+36910,Toowoomba,959.0,6,QLD,36910.0,14,3,0,0,0,8,2.357142857142857,Regional & Rural,21.4,57.1
+36950,Torres,939.0,4,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+36960,Torres Strait Island,777.0,1,QLD,36960.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+37010,Townsville,966.0,7,QLD,37010.0,8,0,0,0,0,6,1.25,Regional & Rural,0.0,75.0
+37300,Weipa,1036.0,9,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+37310,Western Downs,922.0,3,QLD,37310.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+37340,Whitsunday,935.0,4,QLD,37340.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+37400,Winton,959.0,6,QLD,37400.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+37550,Woorabinda,659.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+37570,Wujal Wujal,692.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+37600,Yarrabah,678.0,1,QLD,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+40070,Adelaide,1058.0,9,SA,40070.0,5,0,1,1,0,5,1.4,Metropolitan,0.0,100.0
+40120,Adelaide Hills,1066.0,10,SA,40120.0,1,1,0,0,0,0,5.0,Metropolitan,100.0,0.0
+40150,Adelaide Plains,943.0,5,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+40220,Alexandrina,949.0,5,SA,40220.0,2,0,0,0,0,1,1.0,Metropolitan,0.0,50.0
+40250,Anangu Pitjantjatjara Yunkunytjatjara,706.0,1,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+40310,Barossa,976.0,7,SA,40310.0,3,0,0,0,0,3,1.6666666666666667,Regional & Rural,0.0,100.0
+40430,Barunga West,932.0,4,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+40520,Berri Barmera,887.0,2,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+40700,Burnside,1102.0,10,SA,40700.0,1,0,0,0,0,1,3.0,Metropolitan,0.0,100.0
+40910,Campbelltown (SA),1012.0,9,SA,40910.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+41010,Ceduna,927.0,4,SA,41010.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+41060,Charles Sturt,993.0,8,SA,41060.0,16,2,0,0,0,5,1.5,Metropolitan,12.5,31.2
+41140,Clare and Gilbert Valleys,963.0,6,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+41190,Cleve,952.0,6,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+41330,Coober Pedy,868.0,1,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+41560,Copper Coast,892.0,2,SA,41560.0,1,0,0,0,0,1,3.0,Regional & Rural,0.0,100.0
+41750,Elliston,952.0,5,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+41830,Flinders Ranges,907.0,2,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+41960,Franklin Harbour,923.0,3,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+42030,Gawler,931.0,4,SA,42030.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+42110,Goyder,914.0,3,SA,42110.0,2,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+42250,Grant,974.0,7,SA,42250.0,2,0,0,0,0,2,1.5,Regional & Rural,0.0,100.0
+42600,Holdfast Bay,1044.0,9,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+42750,Kangaroo Island,952.0,6,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+43080,Karoonda East Murray,930.0,4,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+43220,Kimba,985.0,8,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+43360,Kingston (SA),942.0,5,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+43650,Light,981.0,7,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+43710,Lower Eyre Peninsula,982.0,8,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+43790,Loxton Waikerie,925.0,3,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+44000,Maralinga Tjarutja,823.0,1,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+44060,Marion,994.0,8,SA,44060.0,4,0,0,0,0,2,1.25,Metropolitan,0.0,50.0
+44210,Mid Murray,882.0,2,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+44340,Mitcham,1073.0,10,SA,44340.0,4,0,1,0,0,2,1.75,Metropolitan,0.0,50.0
+44550,Mount Barker,1004.0,8,SA,44550.0,3,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+44620,Mount Gambier,893.0,2,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+44830,Mount Remarkable,950.0,5,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+45040,Murray Bridge,866.0,1,SA,45040.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+45090,Naracoorte Lucindale,949.0,5,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+45120,Northern Areas,948.0,5,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+45290,Norwood Payneham and St Peters,1052.0,9,SA,45290.0,4,3,1,0,0,1,2.5,Metropolitan,75.0,25.0
+45340,Onkaparinga,951.0,5,SA,45340.0,2,0,0,0,0,1,1.5,Metropolitan,0.0,50.0
+45400,Orroroo Carrieton,980.0,7,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+45540,Peterborough,783.0,1,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+45680,Playford,850.0,1,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+45890,Port Adelaide Enfield,953.0,6,SA,45890.0,8,0,0,0,0,2,2.25,Metropolitan,0.0,25.0
+46090,Port Augusta,877.0,1,SA,46090.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+46300,Port Lincoln,915.0,3,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+46450,Port Pirie,868.0,1,SA,46450.0,1,0,0,0,0,0,2.0,Metropolitan,0.0,0.0
+46510,Prospect,1058.0,9,SA,46510.0,2,0,0,0,0,0,1.5,Metropolitan,0.0,0.0
+46670,Renmark Paringa,899.0,2,SA,46670.0,2,1,0,0,0,2,1.0,Regional & Rural,50.0,100.0
+46860,Robe,984.0,8,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+46970,Roxby Downs,1004.0,8,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+47140,Salisbury,898.0,2,SA,47140.0,12,4,0,0,0,3,1.3333333333333333,Metropolitan,33.3,25.0
+47290,Southern Mallee,962.0,6,SA,47290.0,1,1,0,0,0,0,1.0,Regional & Rural,100.0,0.0
+47490,Streaky Bay,960.0,6,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+47630,Tatiara,950.0,5,SA,47630.0,2,0,0,0,0,1,1.0,Regional & Rural,0.0,50.0
+47700,Tea Tree Gully,996.0,8,SA,47700.0,14,0,0,0,0,7,2.0714285714285716,Metropolitan,0.0,50.0
+47800,Coorong,911.0,3,SA,47800.0,1,1,0,0,0,0,1.0,Metropolitan,100.0,0.0
+47910,Tumby Bay,954.0,6,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+47980,Unley,1084.0,10,SA,47980.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+48050,Victor Harbor,927.0,3,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+48130,Wakefield,897.0,2,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+48260,Walkerville,1097.0,10,SA,48260.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+48340,Wattle Range,906.0,2,SA,48340.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+48410,West Torrens,1010.0,9,SA,48410.0,4,0,0,0,0,0,1.75,Metropolitan,0.0,0.0
+48540,Whyalla,868.0,1,SA,48540.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+48640,Wudinna,972.0,7,SA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+48750,Yankalilla,942.0,5,SA,48750.0,2,0,0,0,0,1,1.0,Regional & Rural,0.0,50.0
+48830,Yorke Peninsula,918.0,3,SA,48830.0,3,0,0,0,0,0,1.3333333333333333,Regional & Rural,0.0,0.0
+49399,Unincorporated SA,904.0,2,SA,49399.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+50080,Albany,955.0,6,WA,50080.0,1,0,0,0,0,1,3.0,Regional & Rural,0.0,100.0
+50210,Armadale,971.0,7,WA,50210.0,8,1,0,0,0,2,1.375,Metropolitan,12.5,25.0
+50250,Ashburton,979.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+50280,Augusta Margaret River,999.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+50350,Bassendean,1005.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+50420,Bayswater,1017.0,9,WA,50420.0,4,2,1,0,0,1,1.5,Metropolitan,50.0,25.0
+50490,Belmont,985.0,8,WA,50490.0,3,0,0,0,0,3,1.0,Metropolitan,0.0,100.0
+50560,Beverley,932.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+50630,Boddington,944.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+50770,Boyup Brook,969.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+50840,Bridgetown-Greenbushes,962.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+50910,Brookton,919.0,3,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+50980,Broome,983.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+51080,Broomehill-Tambellup,961.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+51120,Bruce Rock,958.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+51190,Bunbury,921.0,3,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+51260,Busselton,985.0,8,WA,51260.0,1,1,0,0,0,0,1.0,Regional & Rural,100.0,0.0
+51310,Cambridge,1153.0,10,WA,51310.0,2,1,0,0,0,2,1.0,Metropolitan,50.0,100.0
+51330,Canning,1024.0,9,WA,51330.0,12,3,3,2,0,4,1.4166666666666667,Metropolitan,25.0,33.3
+51400,Capel,982.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+51470,Carnamah,937.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+51540,Carnarvon,918.0,3,WA,51540.0,2,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+51610,Chapman Valley,999.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+51680,Chittering,1003.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+51710,Christmas Island,972.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+51750,Claremont,1124.0,10,WA,51750.0,1,0,0,0,0,0,4.0,Metropolitan,0.0,0.0
+51820,Cockburn,1020.0,9,WA,51820.0,6,6,1,1,0,0,1.3333333333333333,Metropolitan,100.0,0.0
+51860,Cocos Islands,903.0,2,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+51890,Collie,872.0,1,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+51960,Coolgardie,874.0,1,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52030,Coorow,940.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52100,Corrigin,982.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52170,Cottesloe,1157.0,10,WA,52170.0,1,0,0,0,0,1,5.0,Metropolitan,0.0,100.0
+52240,Cranbrook,951.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52310,Cuballing,946.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52380,Cue,887.0,2,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52450,Cunderdin,964.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52520,Dalwallinu,1024.0,9,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52590,Dandaragan,961.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52660,Dardanup,961.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52730,Denmark,981.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52800,Derby-West Kimberley,818.0,1,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52870,Donnybrook-Balingup,961.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+52940,Dowerin,970.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+53010,Dumbleyung,989.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+53080,Dundas,851.0,1,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+53150,East Fremantle,1109.0,10,WA,53150.0,1,0,0,0,0,1,1.0,Metropolitan,0.0,100.0
+53220,East Pilbara,946.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+53290,Esperance,960.0,6,WA,53290.0,1,0,0,0,0,1,2.0,Regional & Rural,0.0,100.0
+53360,Exmouth,1002.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+53430,Fremantle,1054.0,9,WA,53430.0,5,1,0,0,0,2,1.4,Metropolitan,20.0,40.0
+53570,Gingin,947.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+53640,Gnowangerup,973.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+53710,Goomalling,959.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+53780,Gosnells,962.0,6,WA,53780.0,25,11,2,1,0,20,1.24,Metropolitan,44.0,80.0
+53800,Greater Geraldton,941.0,4,WA,53800.0,5,0,0,0,0,2,1.2,Regional & Rural,0.0,40.0
+53920,Halls Creek,702.0,1,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+53990,Harvey,960.0,6,WA,53990.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+54060,Irwin,931.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+54130,Jerramungup,996.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+54170,Joondalup,1061.0,9,WA,54170.0,18,3,0,0,0,12,2.0,Metropolitan,16.7,66.7
+54200,Kalamunda,1009.0,9,WA,54200.0,7,1,1,0,0,2,1.2857142857142858,Metropolitan,14.3,28.6
+54280,Kalgoorlie-Boulder,980.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+54310,Karratha,1035.0,9,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+54340,Katanning,898.0,2,WA,54340.0,1,0,0,0,0,1,4.0,Regional & Rural,0.0,100.0
+54410,Kellerberrin,899.0,2,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+54480,Kent,1034.0,9,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+54550,Kojonup,979.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+54620,Kondinin,959.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+54690,Koorda,946.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+54760,Kulin,1024.0,9,WA,54760.0,2,0,0,0,0,2,1.0,Regional & Rural,0.0,100.0
+54830,Kwinana,949.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+54900,Lake Grace,1022.0,9,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+54970,Laverton,813.0,1,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55040,Leonora,924.0,3,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55110,Mandurah,936.0,4,WA,55110.0,2,0,0,0,0,2,1.0,Regional & Rural,0.0,100.0
+55180,Manjimup,928.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55250,Meekatharra,871.0,1,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55320,Melville,1081.0,10,WA,55320.0,16,4,0,0,0,6,1.125,Metropolitan,25.0,37.5
+55390,Menzies,858.0,1,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55460,Merredin,937.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55530,Mingenew,970.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55600,Moora,935.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55670,Morawa,929.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55740,Mosman Park,1107.0,10,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55810,Mount Magnet,858.0,1,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55880,Mount Marshall,973.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+55950,Mukinbudin,996.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+56090,Mundaring,1020.0,9,WA,56090.0,4,0,0,0,0,2,1.25,Metropolitan,0.0,50.0
+56160,Murchison,885.0,2,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+56230,Murray,931.0,4,WA,56230.0,4,0,0,0,0,3,1.0,Regional & Rural,0.0,75.0
+56300,Nannup,955.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+56370,Narembeen,997.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+56460,Narrogin,942.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+56580,Nedlands,1159.0,10,WA,56580.0,3,0,0,0,0,3,1.3333333333333333,Metropolitan,0.0,100.0
+56620,Ngaanyatjarraku,717.0,1,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+56730,Northam,914.0,3,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+56790,Northampton,923.0,3,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+56860,Nungarin,960.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+56930,Peppermint Grove,1161.0,10,WA,56930.0,1,0,0,0,0,1,2.0,Metropolitan,0.0,100.0
+57000,Perenjori,1023.0,9,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+57080,Perth,1081.0,10,WA,57080.0,7,0,1,1,0,5,2.142857142857143,Metropolitan,0.0,71.4
+57140,Pingelly,900.0,2,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+57210,Plantagenet,929.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+57280,Port Hedland,997.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+57350,Quairading,941.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+57420,Ravensthorpe,970.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+57490,Rockingham,962.0,6,WA,57490.0,2,0,0,0,0,2,1.0,Metropolitan,0.0,100.0
+57630,Sandstone,906.0,2,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+57700,Serpentine-Jarrahdale,995.0,8,WA,57700.0,2,0,0,0,0,2,1.5,Metropolitan,0.0,100.0
+57770,Shark Bay,942.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+57840,South Perth,1086.0,10,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+57910,Stirling,1035.0,9,WA,57910.0,8,1,1,0,0,4,1.5,Metropolitan,12.5,50.0
+57980,Subiaco,1119.0,10,WA,57980.0,6,5,4,0,1,3,2.0,Metropolitan,83.3,50.0
+58050,Swan,974.0,7,WA,58050.0,22,0,0,0,0,2,1.2272727272727273,Metropolitan,0.0,9.1
+58190,Tammin,942.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+58260,Three Springs,947.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+58330,Toodyay,952.0,5,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+58400,Trayning,896.0,2,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+58470,Upper Gascoyne,920.0,3,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+58510,Victoria Park,1042.0,9,WA,58510.0,14,5,5,2,0,13,1.7857142857142858,Metropolitan,35.7,92.9
+58540,Victoria Plains,1004.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+58570,Vincent,1097.0,10,WA,58570.0,6,0,3,0,0,1,1.8333333333333333,Metropolitan,0.0,16.7
+58610,Wagin,921.0,3,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+58680,Wandering,982.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+58760,Wanneroo,988.0,8,WA,58760.0,15,0,0,0,0,0,1.4,Metropolitan,0.0,0.0
+58820,Waroona,908.0,2,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+58890,West Arthur,1007.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+59030,Westonia,1004.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+59100,Wickepin,967.0,7,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+59170,Williams,1008.0,9,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+59250,Wiluna,821.0,1,WA,59250.0,2,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+59310,Wongan-Ballidu,936.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+59320,Woodanilling,982.0,8,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+59330,Wyalkatchem,898.0,2,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+59340,Wyndham-East Kimberley,934.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+59350,Yalgoo,870.0,1,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+59360,Yilgarn,955.0,6,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+59370,York,938.0,4,WA,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+60210,Break O'Day,881.0,2,TAS,60210.0,1,0,0,0,0,0,2.0,Regional & Rural,0.0,0.0
+60410,Brighton,862.0,1,TAS,60410.0,1,0,0,0,0,0,2.0,Regional & Rural,0.0,0.0
+60610,Burnie,895.0,2,TAS,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+60810,Central Coast (Tas.),923.0,3,TAS,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+61010,Central Highlands (Tas.),888.0,2,TAS,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+61210,Circular Head,908.0,2,TAS,61210.0,1,0,0,0,0,1,2.0,Regional & Rural,0.0,100.0
+61410,Clarence,989.0,8,TAS,61410.0,4,0,0,0,0,4,2.0,Metropolitan,0.0,100.0
+61510,Derwent Valley,879.0,2,TAS,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+61610,Devonport,883.0,2,TAS,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+61810,Dorset,900.0,2,TAS,61810.0,3,2,3,0,0,1,1.0,Regional & Rural,66.7,33.3
+62010,Flinders (Tas.),947.0,5,TAS,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+62210,George Town,846.0,1,TAS,62210.0,2,1,0,0,0,1,1.0,Regional & Rural,50.0,50.0
+62410,Glamorgan-Spring Bay,924.0,3,TAS,62410.0,2,0,0,0,0,1,1.5,Regional & Rural,0.0,50.0
+62610,Glenorchy,911.0,3,TAS,62610.0,3,0,0,0,0,0,2.0,Regional & Rural,0.0,0.0
+62810,Hobart,1062.0,10,TAS,62810.0,7,0,1,1,0,5,2.857142857142857,Metropolitan,0.0,71.4
+63010,Huon Valley,946.0,5,TAS,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+63210,Kentish,918.0,3,TAS,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+63410,King Island,955.0,6,TAS,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+63610,Kingborough,1020.0,9,TAS,63610.0,2,1,0,0,0,0,1.0,Metropolitan,50.0,0.0
+63810,Latrobe (Tas.),928.0,4,TAS,63810.0,1,0,0,0,0,1,1.0,Regional & Rural,0.0,100.0
+64010,Launceston,926.0,3,TAS,64010.0,30,0,0,0,0,2,1.2,Regional & Rural,0.0,6.7
+64210,Meander Valley,940.0,4,TAS,64210.0,2,0,1,1,0,2,1.0,Regional & Rural,0.0,100.0
+64610,Northern Midlands,929.0,4,TAS,64610.0,2,0,0,0,0,0,2.0,Regional & Rural,0.0,0.0
+64810,Sorell,946.0,5,TAS,64810.0,1,0,0,0,0,1,1.0,Metropolitan,0.0,100.0
+65010,Southern Midlands,911.0,3,TAS,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+65210,Tasman,902.0,2,TAS,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+65410,Waratah-Wynyard,900.0,2,TAS,65410.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+65610,West Coast,844.0,1,TAS,65610.0,2,1,0,0,0,1,1.0,Regional & Rural,50.0,50.0
+65810,West Tamar,970.0,7,TAS,65810.0,1,0,1,0,0,1,1.0,Regional & Rural,0.0,100.0
+70200,Alice Springs,1004.0,8,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+70420,Barkly,790.0,1,NT,70420.0,2,0,0,0,0,1,1.0,Regional & Rural,0.0,50.0
+70540,Belyuen,662.0,1,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+70620,Central Desert,697.0,1,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+70700,Coomalie,900.0,2,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+71000,Darwin,1036.0,9,NT,71000.0,14,2,0,0,0,5,1.2142857142857142,Metropolitan,14.3,35.7
+71150,Darwin Waterfront Precinct,1165.0,10,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+71300,East Arnhem,694.0,1,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+72200,Katherine,965.0,7,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+72300,Litchfield,1014.0,9,NT,72300.0,3,1,0,0,0,0,1.0,Metropolitan,33.3,0.0
+72330,MacDonnell,727.0,1,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+72800,Palmerston,998.0,8,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+73600,Roper Gulf,709.0,1,NT,73600.0,1,0,0,0,0,0,1.0,Regional & Rural,0.0,0.0
+74050,Tiwi Islands,729.0,1,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+74550,Victoria Daly,729.0,1,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+74560,Wagait,970.0,7,NT,74560.0,1,0,0,0,0,0,1.0,Metropolitan,0.0,0.0
+74660,West Arnhem,728.0,1,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+74680,West Daly,677.0,1,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+79399,Unincorporated NT,1014.0,9,NT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0
+89399,Unincorporated ACT,1091.0,10,ACT,89399.0,26,2,1,0,0,8,1.6153846153846154,Metropolitan,7.7,30.8
+99399,Unincorp. Other Territories,952.0,5,OT,,0,0,0,0,0,0,,Regional & Rural,0.0,0.0

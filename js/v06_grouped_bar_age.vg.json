@@ -1,0 +1,60 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 340,
+    "title": {
+      "text": "Playground Surface & Accessibility Auditing Across States",
+      "subtitle": "Number of playgrounds by ground surface category across major Australian states (Click legend to filter)",
+      "font": "Merriweather",
+      "fontSize": 15,
+      "subtitleFont": "Plus Jakarta Sans",
+      "subtitleFontSize": 11.5,
+      "anchor": "start"
+    },
+    "data": {"url": "data/osm_playgrounds_clean.csv"},
+    "params": [
+      {
+        "name": "surf_select",
+        "select": {"type": "point", "fields": ["Surface_Clean"]},
+        "bind": "legend"
+      }
+    ],
+    "transform": [
+      {"filter": "datum.Surface_Clean != 'Unrecorded'"}
+    ],
+    "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
+    "encoding": {
+      "x": {
+        "field": "State_Abbr",
+        "type": "nominal",
+        "title": "Australian State / Territory",
+        "sort": ["VIC", "NSW", "QLD", "WA", "SA", "TAS", "ACT", "NT"],
+        "axis": {"labelAngle": 0}
+      },
+      "xOffset": {"field": "Surface_Clean"},
+      "y": {
+        "aggregate": "count",
+        "type": "quantitative",
+        "title": "Number of Surface-Audited Playgrounds"
+      },
+      "color": {
+        "field": "Surface_Clean",
+        "type": "nominal",
+        "title": "Surface Material",
+        "scale": {
+          "domain": ["Woodchips & Bark", "Sand", "Impact Rubber", "Grass & Turf", "Earth & Gravel", "Concrete & Paved"],
+          "range": ["#B45309", "#D97706", "#0F766E", "#4D7C0F", "#78716C", "#475569"]
+        }
+      },
+      "opacity": {
+        "condition": {"param": "surf_select", "value": 0.95},
+        "value": 0.15
+      },
+      "tooltip": [
+        {"field": "State_Abbr", "type": "nominal", "title": "State"},
+        {"field": "Surface_Clean", "type": "nominal", "title": "Surface Material"},
+        {"aggregate": "count", "type": "quantitative", "title": "Playground Count"}
+      ]
+    },
+    "config": {"view": {"stroke": null}}
+  }

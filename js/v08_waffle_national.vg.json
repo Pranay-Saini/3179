@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 340,
+    "title": {
+      "text": "Wheelchair Compliance Among Audited Playgrounds",
+      "subtitle": "10x10 unit proportion of wheelchair-audited sites (36% Yes, 22% Limited, 42% No)",
+      "font": "Merriweather",
+      "fontSize": 15,
+      "subtitleFont": "Plus Jakarta Sans",
+      "subtitleFontSize": 11.5,
+      "anchor": "start"
+    },
+    "data": {
+      "sequence": {"start": 0, "stop": 100, "as": "unit_id"}
+    },
+    "transform": [
+      {"calculate": "datum.unit_id % 10", "as": "col"},
+      {"calculate": "floor(datum.unit_id / 10)", "as": "row"},
+      {
+        "calculate": "datum.unit_id < 36 ? 'Verified Accessible: Yes (36% / 21 sites)' : (datum.unit_id < 58 ? 'Partial Access: Limited (22% / 13 sites)' : 'Inaccessible: No (42% / 24 sites)')",
+        "as": "Compliance_Tier"
+      }
+    ],
+    "mark": {
+      "type": "rect",
+      "cornerRadius": 4,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 2.5
+    },
+    "encoding": {
+      "x": {"field": "col", "type": "ordinal", "axis": null},
+      "y": {"field": "row", "type": "ordinal", "sort": "descending", "axis": null},
+      "color": {
+        "field": "Compliance_Tier",
+        "type": "nominal",
+        "title": "Wheelchair Audit Outcome (n = 58)",
+        "scale": {
+          "domain": [
+            "Verified Accessible: Yes (36% / 21 sites)",
+            "Partial Access: Limited (22% / 13 sites)",
+            "Inaccessible: No (42% / 24 sites)"
+          ],
+          "range": ["#0F766E", "#F59E0B", "#E11D48"]
+        },
+        "legend": {"orient": "bottom", "direction": "vertical"}
+      },
+      "tooltip": [
+        {"field": "Compliance_Tier", "type": "nominal", "title": "Audit Outcome"},
+        {"calculate": "datum.unit_id + 1", "type": "quantitative", "title": "Percentile Square"}
+      ]
+    },
+    "config": {"view": {"stroke": null}}
+  }

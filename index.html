@@ -1,13 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First HTML page</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locked Out of Play? Australian Playground Equity & Inclusion Audit</title>
+
+  <!-- Pure.css Grid Layout (FIT3179 Studio Standard) -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vega & Vega-Lite Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Heading 1</h1>
-    <p>My First Paragraph</p>
+
+  <div class="page-container">
+    <header class="hero-banner">
+      <div class="hero-tag">NATIONAL CIVIC INFRASTRUCTURE AUDIT</div>
+      <h1>Locked Out of Play?</h1>
+      <p class="subtitle">
+        Investigating socioeconomic disparities, loose-fill ground barriers, national sanitary catchments, and capital grant targeting across 2,239 Australian public playgrounds and 25,624 public toilets.
+      </p>
+    </header>
+
+    <!-- ACT 1 -->
+    <section class="act-section">
+      <div class="act-header">
+        <span class="act-badge">ACT I — MACRO & MUNICIPAL PROVISION</span>
+        <h2>The Geography of Play: Capital Clusters & Regional Voids</h2>
+        <p class="act-intro">
+          Across Australia's 2,239 documented OpenStreetMap playgrounds, infrastructure is heavily concentrated along coastal metropolitan belts. Victoria (729 sites), New South Wales (578), and Queensland (486) account for 80.1% of national play spaces, while 64.4% sit within 55 km of state capital CBDs.
+        </p>
+      </div>
+
+      <div class="pure-g vis-row">
+        <div class="pure-u-1">
+          <div class="vis-card">
+            <div id="vis01" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pure-g vis-row">
+        <div class="pure-u-1 pure-u-md-1-3 narrative-col">
+          <h3>Municipal Coverage Across 547 LGAs</h3>
+          <p>
+            Mapping playground counts across Local Government Areas (`aus_lga.topojson`) reveals sharp municipal divides. Only <strong>294 of Australia's 547 LGAs</strong> have documented play spaces in the civic registry.
+          </p>
+          <p>
+            Established metropolitan councils—such as <span class="highlight-teal">Northern Beaches (86 sites)</span>, <span class="highlight-teal">Brisbane (75)</span>, and <span class="highlight-teal">Casey (62)</span>—dominate provision, while rural shires face vast documentation and infrastructure voids.
+          </p>
+          <div class="callout-box">
+            <strong>Interactive Guide:</strong> Use the zoom slider and capital region selector to inspect council-level provision and SEIFA scores across Australia.
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-2-3">
+          <div class="vis-card">
+            <div id="vis02" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 2 -->
+    <section class="act-section">
+      <div class="act-header">
+        <span class="act-badge">ACT II — SOCIOECONOMIC EQUITY</span>
+        <h2>The Socioeconomic Divide: ABS SEIFA Deciles & The Regional Gap</h2>
+        <p class="act-intro">
+          Joining LGA playground counts with the ABS Index of Relative Socio-economic Advantage and Disadvantage (SEIFA) exposes a steep socioeconomic gradient between Australia's poorest and wealthiest municipalities.
+        </p>
+      </div>
+
+      <div class="pure-g vis-row">
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="vis-card">
+            <div id="vis03" class="vis-container"></div>
+            <p class="chart-caption">
+              <strong>The 4.7x SEIFA Gap:</strong> Disadvantaged councils (Deciles 1–3) average just <strong>1.68 playgrounds per LGA</strong>, compared to <strong>7.94 per LGA</strong> in advantaged councils (Deciles 8–10).
+            </p>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="vis-card">
+            <div id="vis04" class="vis-container"></div>
+            <p class="chart-caption">
+              <strong>Metropolitan vs Regional Divide:</strong> Filter by state or compare nationwide cohorts across playground volume and surface audit completeness.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 3 -->
+    <section class="act-section">
+      <div class="act-header">
+        <span class="act-badge">ACT III — MICRO-LEVEL ASSET QUALITY</span>
+        <h2>Anatomy of Play: Loose-Fill Surfaces, Governance & Age Gaps</h2>
+        <p class="act-intro">
+          For children using wheelchairs or walkers, ground surfacing determines whether a park is inclusive or off-limits. Examining the 423 surface-audited sites in our dataset shows an overwhelming reliance on loose-fill materials.
+        </p>
+      </div>
+
+      <div class="pure-g vis-row">
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="vis-card">
+            <div id="vis05" class="vis-container"></div>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2">
+          <div class="vis-card">
+            <div id="vis06" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pure-g vis-row">
+        <div class="pure-u-1 pure-u-md-2-3">
+          <div class="vis-card">
+            <div id="vis07" class="vis-container"></div>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3 narrative-col">
+          <h3>The Loose-Fill Barrier</h3>
+          <p>
+            Among playgrounds with recorded ground materials, <span class="highlight-coral">Woodchips & Bark Mulch (44.9%)</span> and <span class="highlight-coral">Sand (43.5%)</span> make up <strong>88.4% of sites</strong>, whereas synthetic <span class="highlight-teal">Impact Rubber accounts for just 4.3% (18 sites)</span>.
+          </p>
+          <p>
+            Cross-tabulating `surface` against `wheelchair` ratings confirms that loose sand and woodchips disproportionately result in `'no'` or `'limited'` wheelchair access.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 4 -->
+    <section class="act-section">
+      <div class="act-header">
+        <span class="act-badge">ACT IV — NATIONAL ACCESSIBILITY & SANITARY CATCHMENTS</span>
+        <h2>The Dwell-Time Barrier: Wheelchair Audits & National Toilet Co-Location</h2>
+        <p class="act-intro">
+          Inclusive play requires both mobility access and nearby accessible toilets. By linking all 2,239 playgrounds with the 25,624 facilities in the National Public Toilet Map (`toilets.csv`), we evaluate family dwell-time infrastructure across every Australian state.
+        </p>
+      </div>
+
+      <div class="pure-g vis-row">
+        <div class="pure-u-1 pure-u-md-5-12">
+          <div class="vis-card">
+            <div id="vis08" class="vis-container"></div>
+            <p class="chart-caption">
+              Among the 58 playgrounds in Australia with a verified `wheelchair` rating, <strong>36% (21 sites)</strong> are fully accessible (`yes`), <strong>22% (13)</strong> offer `limited` access, and <strong>41% (24)</strong> lock out wheelchair users (`no`).
+            </p>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-7-12">
+          <div class="vis-card">
+            <div id="vis09" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 5 -->
+    <section class="act-section">
+      <div class="act-header">
+        <span class="act-badge">ACT V — EMPIRICAL POLICY CASE STUDY</span>
+        <h2>The Capital Response: NSW 'Everyone Can Play' Grants (140 Projects)</h2>
+        <p class="act-intro">
+          How are governments fixing these deficits? We link all 140 projects ($19.08M) from the NSW <em>Everyone Can Play</em> grant register (2018/19 to 2021/22) to ABS SEIFA council scores to test whether capital funding targeted disadvantaged communities.
+        </p>
+      </div>
+
+      <div class="pure-g vis-row">
+        <div class="pure-u-1 pure-u-md-1-3 narrative-col">
+          <h3>Zero Socioeconomic Targeting ($R^2 = 0.0006$)</h3>
+          <p>
+            Grant allocations show virtually <strong>zero correlation with council SEIFA scores ($r = 0.025$)</strong>.
+          </p>
+          <p>
+            Most strikingly, <span class="highlight-coral">Decile 1 councils received 0 grants</span> across all four rounds, whereas <span class="highlight-teal">Decile 10 (the wealthiest 10% of councils) captured 25 grants totaling $3.44M</span>—demonstrating how competitive grant applications favour well-resourced metropolitan councils.
+          </p>
+        </div>
+        <div class="pure-u-1 pure-u-md-2-3">
+          <div class="vis-card">
+            <div id="vis10" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pure-g vis-row">
+        <div class="pure-u-1 pure-u-md-7-12">
+          <div class="vis-card">
+            <div id="vis11" class="vis-container"></div>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-5-12">
+          <div class="vis-card">
+            <div id="vis12" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-1-2">
+          <h4>Authorship & Academic Metadata</h4>
+          <p>
+            <strong>Author:</strong> Pranay Saini<br>
+            <strong>Unit:</strong> FIT3179 Data Visualisation 2, Monash University<br>
+            <strong>Date:</strong> October 2026
+          </p>
+          <p class="ai-ack">
+            <strong>Acknowledgement of Generative AI:</strong> Generative AI (Google Gemini) was utilized for data preprocessing script generation, Vega-Lite specification structuring, and narrative copy-editing in compliance with Monash University guidelines.
+          </p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2">
+          <h4>Data Sources & References</h4>
+          <ul class="source-list">
+            <li><strong>OpenStreetMap (OSM) Australia:</strong> Public Playground Registry (`osm_playgrounds.csv`, 2,239 sites, updated 2026)</li>
+            <li><strong>Australian Bureau of Statistics (ABS):</strong> SEIFA Index of Relative Socio-economic Advantage and Disadvantage (`lga_seifa_summary.csv` & ASGS Edition 3 TopoJSONs)</li>
+            <li><strong>Department of Health and Aged Care:</strong> National Public Toilet Map (`toilets.csv`, 25,624 facilities)</li>
+            <li><strong>NSW Department of Planning and Environment:</strong> Everyone Can Play Capital Grants 2018/19–2021/22 (`nsw_everyone_can_play.csv`, 140 projects)</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/vega_lite_vis.js"></script>
 </body>
 </html>

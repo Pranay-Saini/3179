@@ -1,0 +1,89 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 340,
+    "title": {
+      "text": "Did State Grants Target Disadvantaged Communities? (n = 140)",
+      "subtitle": "NSW Everyone Can Play grant allocations ($ AUD) vs Council ABS SEIFA Score (r = 0.025)",
+      "font": "Merriweather",
+      "fontSize": 15,
+      "subtitleFont": "Plus Jakarta Sans",
+      "subtitleFontSize": 11.5,
+      "anchor": "start"
+    },
+    "data": {"url": "data/nsw_everyone_can_play_clean.csv"},
+    "layer": [
+      {
+        "mark": {"type": "circle", "size": 95, "opacity": 0.75, "stroke": "#FFFFFF", "strokeWidth": 0.6},
+        "encoding": {
+          "x": {
+            "field": "Score",
+            "type": "quantitative",
+            "title": "Council ABS SEIFA Advantage Score (Lower = More Disadvantaged)",
+            "scale": {"domain": [880, 1180]}
+          },
+          "y": {
+            "field": "Amount",
+            "type": "quantitative",
+            "title": "Approved Grant Amount ($ AUD)",
+            "axis": {"format": "$,.0f"}
+          },
+          "color": {
+            "field": "Council_Cohort",
+            "type": "nominal",
+            "title": "Council Cohort",
+            "scale": {
+              "domain": ["Metropolitan", "Regional & Rural"],
+              "range": ["#0F766E", "#D95F02"]
+            }
+          },
+          "tooltip": [
+            {"field": "Project", "type": "nominal", "title": "Project"},
+            {"field": "Council", "type": "nominal", "title": "Council"},
+            {"field": "Amount", "type": "quantitative", "title": "Grant Amount ($)", "format": "$,.0f"},
+            {"field": "Year", "type": "ordinal", "title": "Funding Round"},
+            {"field": "Score", "type": "quantitative", "title": "SEIFA Score", "format": ".0f"},
+            {"field": "Decile", "type": "ordinal", "title": "SEIFA Decile"}
+          ]
+        }
+      },
+      {
+        "transform": [{"regression": "Amount", "on": "Score"}],
+        "mark": {
+          "type": "line",
+          "color": "#1E293B",
+          "strokeDash": [6, 4],
+          "strokeWidth": 2
+        },
+        "encoding": {
+          "x": {"field": "Score", "type": "quantitative"},
+          "y": {"field": "Amount", "type": "quantitative"}
+        }
+      },
+      {
+        "data": {
+          "values": [
+            {
+              "x": 900,
+              "y": 440000,
+              "note": "Flat Allocation (R² = 0.0006):;Decile 1 received 0 grants, while;Decile 10 captured 25 grants ($3.44M)."
+            }
+          ]
+        },
+        "transform": [{"calculate": "split(datum.note, ';')", "as": "note_lines"}],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "fontSize": 11,
+          "fontWeight": "bold",
+          "color": "#D95F02"
+        },
+        "encoding": {
+          "x": {"field": "x", "type": "quantitative"},
+          "y": {"field": "y", "type": "quantitative"},
+          "text": {"field": "note_lines"}
+        }
+      }
+    ],
+    "config": {"view": {"stroke": null}}
+  }

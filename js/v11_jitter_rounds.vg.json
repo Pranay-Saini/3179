@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 340,
+    "title": {
+      "text": "Grant Distribution & Funding Tiers Over Time (2018/19–2021/22)",
+      "subtitle": "Individual NSW Everyone Can Play project allocations showing clustering at $50k, $100k, and $200k",
+      "font": "Merriweather",
+      "fontSize": 15,
+      "subtitleFont": "Plus Jakarta Sans",
+      "subtitleFontSize": 11.5,
+      "anchor": "start"
+    },
+    "data": {"url": "data/nsw_everyone_can_play_clean.csv"},
+    "transform": [
+      {"calculate": "random()", "as": "jitter_y"}
+    ],
+    "mark": {
+      "type": "circle",
+      "size": 85,
+      "opacity": 0.8,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.6
+    },
+    "encoding": {
+      "y": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Funding Financial Year",
+        "sort": ["2018/19", "2019/20", "2020/21", "2021/22"]
+      },
+      "yOffset": {
+        "field": "jitter_y",
+        "type": "quantitative",
+        "scale": {"domain": [0, 1], "range": [-16, 16]}
+      },
+      "x": {
+        "field": "Amount",
+        "type": "quantitative",
+        "title": "Approved Grant Amount ($ AUD)",
+        "axis": {"format": "$,.0f"}
+      },
+      "color": {
+        "field": "Council_Cohort",
+        "type": "nominal",
+        "title": "Council Cohort",
+        "scale": {
+          "domain": ["Metropolitan", "Regional & Rural"],
+          "range": ["#0F766E", "#D95F02"]
+        }
+      },
+      "tooltip": [
+        {"field": "Project", "type": "nominal", "title": "Project"},
+        {"field": "Council", "type": "nominal", "title": "Council"},
+        {"field": "Year", "type": "ordinal", "title": "Financial Year"},
+        {"field": "Amount", "type": "quantitative", "title": "Grant Amount ($)", "format": "$,.0f"},
+        {"field": "Decile", "type": "ordinal", "title": "Council SEIFA Decile"}
+      ]
+    },
+    "config": {"view": {"stroke": null}}
+  }

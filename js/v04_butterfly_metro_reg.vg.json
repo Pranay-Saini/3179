@@ -1,0 +1,80 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "The Urban-Regional Divide Across States",
+      "subtitle": "Comparing mean playgrounds per LGA (left) vs accessible park toilet co-location % (right)",
+      "font": "Merriweather",
+      "fontSize": 15,
+      "subtitleFont": "Plus Jakarta Sans",
+      "subtitleFontSize": 11.5,
+      "anchor": "start"
+    },
+    "data": {"url": "data/lga_seifa_clean.csv"},
+    "params": [
+      {
+        "name": "Cohort_Select",
+        "value": null,
+        "bind": {
+          "input": "select",
+          "options": [null, "Metropolitan", "Regional & Rural"],
+          "labels": ["All Councils", "Metropolitan Only", "Regional & Rural Only"],
+          "name": "Filter Council Cohort: "
+        }
+      }
+    ],
+    "transform": [
+      {"filter": "datum.Playground_Count > 0"},
+      {"filter": "Cohort_Select == null || datum.Urban_Cohort == Cohort_Select"}
+    ],
+    "spacing": 6,
+    "hconcat": [
+      {
+        "width": 175,
+        "height": 230,
+        "mark": {"type": "bar", "color": "#0F766E", "cornerRadiusEnd": 4},
+        "encoding": {
+          "y": {"field": "State_Abbr", "type": "nominal", "axis": null, "sort": ["VIC", "NSW", "QLD", "WA", "SA", "TAS", "ACT", "NT"]},
+          "x": {
+            "aggregate": "mean",
+            "field": "Playground_Count",
+            "type": "quantitative",
+            "title": "Mean Playgrounds / Active LGA",
+            "sort": "descending"
+          },
+          "tooltip": [
+            {"field": "State_Abbr", "type": "nominal", "title": "State"},
+            {"aggregate": "mean", "field": "Playground_Count", "type": "quantitative", "title": "Mean Playgrounds per LGA", "format": ".1f"}
+          ]
+        }
+      },
+      {
+        "width": 55,
+        "height": 230,
+        "mark": {"type": "text", "fontWeight": "bold", "fontSize": 12, "color": "#1E293B"},
+        "encoding": {
+          "y": {"field": "State_Abbr", "type": "nominal", "axis": null, "sort": ["VIC", "NSW", "QLD", "WA", "SA", "TAS", "ACT", "NT"]},
+          "text": {"field": "State_Abbr", "type": "nominal"}
+        }
+      },
+      {
+        "width": 175,
+        "height": 230,
+        "mark": {"type": "bar", "color": "#D95F02", "cornerRadiusEnd": 4},
+        "encoding": {
+          "y": {"field": "State_Abbr", "type": "nominal", "axis": null, "sort": ["VIC", "NSW", "QLD", "WA", "SA", "TAS", "ACT", "NT"]},
+          "x": {
+            "aggregate": "mean",
+            "field": "Toilet_CoLocation_Pct",
+            "type": "quantitative",
+            "title": "Suburb Toilet Co-Location (%)",
+            "scale": {"domain": [0, 100]}
+          },
+          "tooltip": [
+            {"field": "State_Abbr", "type": "nominal", "title": "State"},
+            {"aggregate": "mean", "field": "Toilet_CoLocation_Pct", "type": "quantitative", "title": "Accessible Toilet Co-Location (%)", "format": ".1f"}
+          ]
+        }
+      }
+    ],
+    "config": {"view": {"stroke": null}}
+  }

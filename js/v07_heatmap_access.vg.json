@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 320,
+  "title": {
+    "text": "The Surface-Accessibility Bottleneck",
+    "subtitle": "Cross-tabulation of playground ground surface vs verified wheelchair rating (% within surface type)",
+    "font": "Merriweather",
+    "fontSize": 15,
+    "subtitleFont": "Plus Jakarta Sans",
+    "subtitleFontSize": 11.5,
+    "anchor": "start"
+  },
+  "data": {"url": "../data/osm_playgrounds_clean.csv"},
+  "transform": [
+    {"filter": "datum.Wheelchair_Clean != 'unrecorded'"},
+    {
+      "joinaggregate": [{"op": "count", "as": "Surface_Total"}],
+      "groupby": ["Surface_Clean"]
+    },
+    {
+      "aggregate": [
+        {"op": "count", "as": "Site_Count"},
+        {"op": "max", "field": "Surface_Total", "as": "Surface_Total"}
+      ],
+      "groupby": ["Surface_Clean", "Wheelchair_Clean"]
+    },
+    {
+      "calculate": "(datum.Site_Count / datum.Surface_Total) * 100",
+      "as": "Row_Pct"
+    },
+    {
+      "calculate": "format(datum.Row_Pct, '.0f') + '% (' + datum.Site_Count + ')'",
+      "as": "Cell_Label"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Wheelchair_Clean",
+      "type": "ordinal",
+      "title": "Verified Wheelchair Access Rating",
+      "sort": ["yes", "limited", "no"],
+      "axis": {"labelAngle": 0, "labelFontWeight": "bold"}
+    },
+    "y": {
+      "field": "Surface_Clean",
+      "type": "nominal",
+      "title": "Ground Surface Category",
+      "sort": ["Impact Rubber", "Woodchips & Bark", "Sand", "Concrete & Paved", "Unrecorded"]
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2.5,
+        "cornerRadius": 4
+      },
+      "encoding": {
+        "color": {
+          "field": "Row_Pct",
+          "type": "quantitative",
+          "title": "Share of Surface (%)",
+          "scale": {"scheme": "tealblues", "domain": [0, 100]}
+        },
+        "tooltip": [
+          {"field": "Surface_Clean", "type": "nominal", "title": "Surface Material"},
+          {"field": "Wheelchair_Clean", "type": "nominal", "title": "Wheelchair Rating"},
+          {"field": "Row_Pct", "type": "quantitative", "title": "Share within Surface (%)", "format": ".1f"},
+          {"field": "Site_Count", "type": "quantitative", "title": "Audited Playgrounds"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "align": "center",
+        "fontWeight": "bold",
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {"field": "Cell_Label", "type": "nominal"},
+        "color": {
+          "condition": {"test": "datum.Row_Pct > 50", "value": "#FFFFFF"},
+          "value": "#0F172A"
+        }
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}
