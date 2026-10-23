@@ -1,131 +1,135 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
-    "height": 360,
-    "title": {
-      "text": "The Family Dwell-Time Barrier: National Sanitary Catchments",
-      "subtitle": "Accessible Park/Reserve Toilets (green buffers) vs Playgrounds across Australia (56.2% suburb co-location)",
-      "font": "Merriweather",
-      "fontSize": 15,
-      "subtitleFont": "Plus Jakarta Sans",
-      "subtitleFontSize": 11.5,
-      "anchor": "start"
-    },
-    "params": [
-      {
-        "name": "Buffer_Radius",
-        "value": 200,
-        "bind": {
-          "input": "range",
-          "min": 100,
-          "max": 600,
-          "step": 100,
-          "name": "Catchment Buffer Size (m): "
-        }
-      },
-      {
-        "name": "region_view",
-        "value": [134.0, -28.5],
-        "bind": {
-          "input": "select",
-          "options": [
-            [134.0, -28.5],
-            [144.96, -37.81],
-            [151.05, -33.84],
-            [153.02, -27.47],
-            [115.86, -31.95],
-            [138.60, -34.92],
-            [147.32, -42.88]
-          ],
-          "labels": [
-            "Australia National Overview",
-            "Greater Melbourne (VIC)",
-            "Greater Sydney (NSW)",
-            "Greater Brisbane (QLD)",
-            "Greater Perth (WA)",
-            "Greater Adelaide (SA)",
-            "Greater Hobart (TAS)"
-          ],
-          "name": "Inspect Corridor: "
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 360,
+  "title": {
+    "text": "The Family Dwell-Time Barrier: National Sanitary Catchments",
+    "subtitle": "Accessible Park/Reserve Toilets (green buffers) vs Playgrounds across Australia (56.2% suburb co-location)",
+    "font": "Merriweather",
+    "fontSize": 15,
+    "subtitleFont": "Plus Jakarta Sans",
+    "subtitleFontSize": 11.5,
+    "anchor": "start"
+  },
+  "params": [
+    {
+      "name": "Buffer_Radius",
+      "value": 200,
+      "bind": {
+        "input": "range",
+        "min": 100,
+        "max": 600,
+        "step": 100,
+        "name": "Catchment Buffer Size (m): "
       }
-    ],
-    "projection": {
-      "type": "equirectangular",
-      "center": {"expr": "region_view"},
-      "scale": {"expr": "region_view[0] == 134.0 ? 650 : 28000"}
     },
-    "layer": [
-      {
-        "data": {
-          "url": "data/aus_states.topojson",
-          "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
-        },
-        "mark": {
-          "type": "geoshape",
-          "fill": "#F8FAFC",
-          "stroke": "#CBD5E1",
-          "strokeWidth": 1
-        }
-      },
-      {
-        "data": {"url": "data/toilets_national_parks.csv"},
-        "transform": [
-          {"calculate": "(Buffer_Radius / 200) * 180", "as": "buffer_area"}
+    {
+      "name": "region_view",
+      "value": [134.0, -28.5],
+      "bind": {
+        "input": "select",
+        "options": [
+          [134.0, -28.5],
+          [144.96, -37.81],
+          [151.05, -33.84],
+          [153.02, -27.47],
+          [115.86, -31.95],
+          [138.60, -34.92],
+          [147.32, -42.88]
         ],
-        "mark": {
-          "type": "circle",
-          "fill": "#0F766E",
-          "fillOpacity": 0.18,
-          "stroke": "#0F766E",
-          "strokeWidth": 0.7
-        },
-        "encoding": {
-          "longitude": {"field": "Longitude", "type": "quantitative"},
-          "latitude": {"field": "Latitude", "type": "quantitative"},
-          "size": {"field": "buffer_area", "type": "quantitative", "scale": null},
-          "tooltip": [
-            {"field": "Name", "type": "nominal", "title": "Accessible Park Toilet"},
-            {"field": "Town", "type": "nominal", "title": "Suburb / Town"},
-            {"field": "State", "type": "nominal", "title": "State"},
-            {"field": "Amenity_Tier", "type": "nominal", "title": "Facility Tier"},
-            {"field": "MLAK24", "type": "nominal", "title": "24hr MLAK Access"},
-            {"field": "OpeningHours", "type": "nominal", "title": "Opening Hours"}
-          ]
-        }
-      },
-      {
-        "data": {"url": "data/osm_playgrounds_clean.csv"},
-        "mark": {
-          "type": "circle",
-          "size": 28,
-          "opacity": 0.85
-        },
-        "encoding": {
-          "longitude": {"field": "Longitude", "type": "quantitative"},
-          "latitude": {"field": "Latitude", "type": "quantitative"},
-          "color": {
-            "field": "Toilet_Catchment_Status",
-            "type": "nominal",
-            "title": "Sanitary Co-Location",
-            "scale": {
-              "domain": [
-                "Served (Accessible Park Toilet in Suburb)",
-                "Unserved (No Accessible Park Toilet in Suburb)"
-              ],
-              "range": ["#1E3A8A", "#E11D48"]
-            },
-            "legend": {"orient": "bottom", "direction": "vertical"}
-          },
-          "tooltip": [
-            {"field": "Name_Clean", "type": "nominal", "title": "Playground"},
-            {"field": "meta_name_sub", "type": "nominal", "title": "Suburb"},
-            {"field": "State_Abbr", "type": "nominal", "title": "State"},
-            {"field": "Toilet_Catchment_Status", "type": "nominal", "title": "Sanitary Status"},
-            {"field": "Accessible_Park_Toilets", "type": "quantitative", "title": "Accessible Park Toilets in Suburb"}
-          ]
-        }
+        "labels": [
+          "Australia National Overview",
+          "Greater Melbourne (VIC)",
+          "Greater Sydney (NSW)",
+          "Greater Brisbane (QLD)",
+          "Greater Perth (WA)",
+          "Greater Adelaide (SA)",
+          "Greater Hobart (TAS)"
+        ],
+        "name": "Inspect Corridor: "
       }
-    ],
-    "config": {"view": {"stroke": null}}
-  }
+    }
+  ],
+  "projection": {
+    "type": "equirectangular",
+    "center": {"expr": "region_view"},
+    "scale": {"expr": "region_view[0] == 134.0 ? 650 : 28000"}
+  },
+  "layer": [
+    {
+      "data": {"sphere": true},
+      "mark": {"type": "geoshape", "fill": "#E0F2FE"}
+    },
+    {
+      "data": {
+        "url": "data/aus_states.topojson",
+        "format": {"type": "topojson", "feature": "states"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F8FAFC",
+        "stroke": "#CBD5E1",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {"url": "data/toilets_national_parks.csv"},
+      "transform": [
+        {"calculate": "(Buffer_Radius / 200) * 180", "as": "buffer_area"}
+      ],
+      "mark": {
+        "type": "circle",
+        "fill": "#0F766E",
+        "fillOpacity": 0.18,
+        "stroke": "#0F766E",
+        "strokeWidth": 0.7
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "size": {"field": "buffer_area", "type": "quantitative", "scale": null},
+        "tooltip": [
+          {"field": "Name", "type": "nominal", "title": "Accessible Park Toilet"},
+          {"field": "Town", "type": "nominal", "title": "Suburb / Town"},
+          {"field": "State", "type": "nominal", "title": "State"},
+          {"field": "Amenity_Tier", "type": "nominal", "title": "Facility Tier"},
+          {"field": "MLAK24", "type": "nominal", "title": "24hr MLAK Access"},
+          {"field": "OpeningHours", "type": "nominal", "title": "Opening Hours"}
+        ]
+      }
+    },
+    {
+      "data": {"url": "data/osm_playgrounds_clean.csv"},
+      "mark": {
+        "type": "circle",
+        "size": 28,
+        "opacity": 0.85
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "color": {
+          "field": "Toilet_Catchment_Status",
+          "type": "nominal",
+          "title": "Sanitary Co-Location",
+          "scale": {
+            "domain": [
+              "Served (Accessible Park Toilet in Suburb)",
+              "Unserved (No Accessible Park Toilet in Suburb)"
+            ],
+            "range": ["#1E3A8A", "#E11D48"]
+          },
+          "legend": {"orient": "bottom", "direction": "vertical"}
+        },
+        "tooltip": [
+          {"field": "Name_Clean", "type": "nominal", "title": "Playground"},
+          {"field": "meta_name_sub", "type": "nominal", "title": "Suburb"},
+          {"field": "State_Abbr", "type": "nominal", "title": "State"},
+          {"field": "Toilet_Catchment_Status", "type": "nominal", "title": "Sanitary Status"},
+          {"field": "Accessible_Park_Toilets", "type": "quantitative", "title": "Accessible Park Toilets in Suburb"}
+        ]
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}

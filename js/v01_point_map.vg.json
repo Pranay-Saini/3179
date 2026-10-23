@@ -18,9 +18,13 @@
   },
   "layer": [
     {
+      "data": {"sphere": true},
+      "mark": {"type": "geoshape", "fill": "#E0F2FE"}
+    },
+    {
       "data": {
         "url": "data/aus_states.topojson",
-        "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+        "format": {"type": "topojson", "feature": "states"}
       },
       "mark": {
         "type": "geoshape",
