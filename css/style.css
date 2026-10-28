@@ -152,7 +152,7 @@ h1, h2, h3, h4 {
   width: 100%;
 }
 
-/* Full Horizontal Width for Treemap (#vis05) */
+/* Full Horizontal Space for Treemap (#vis05) */
 #vis05,
 #vis05.vega-embed,
 #vis05 .vega-embed {
@@ -229,28 +229,35 @@ h1, h2, h3, h4 {
   margin-right: 6px;
 }
 
-/* Synthesis Conclusion Banner */
+/* Conclusion Synthesis Section — Matching Page Annotations */
+.conclusion-section,
 .conclusion-card {
-  background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-  border: 1px solid #BFDBFE;
-  border-left: 5px solid var(--accent-urban);
-  border-radius: 10px;
-  padding: 24px 28px;
-  margin: 32px 8px 0 8px;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 24px 20px 8px 20px;
+  margin: 32px 0 0 0;
 }
 
+.conclusion-section h3,
 .conclusion-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-  color: #0F172A;
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
+.conclusion-section p,
 .conclusion-card p {
-  margin: 0;
-  font-size: 0.98rem;
-  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.96rem;
+  color: var(--text-secondary);
   line-height: 1.65;
+  margin: 0;
 }
 
 /* Footer */

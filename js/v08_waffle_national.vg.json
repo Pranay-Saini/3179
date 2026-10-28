@@ -54,10 +54,11 @@
         "titleFontSize": 14,
         "titleFontWeight": "bold",
         "titleColor": "#1E293B",
+        "titleLimit": 320,
         "labelFont": "Plus Jakarta Sans",
         "labelFontSize": 13,
         "labelColor": "#334155",
-        "labelLimit": 260,
+        "labelLimit": 280,
         "symbolSize": 320,
         "symbolType": "square",
         "rowPadding": 14,
@@ -69,5 +70,8 @@
       {"field": "unit_id", "type": "quantitative", "title": "Percentile Unit"}
     ]
   },
-  "config": {"view": {"stroke": null}}
+  "config": {
+    "view": {"stroke": null},
+    "legend": {"titleLimit": 320}
+  }
 }

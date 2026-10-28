@@ -23,7 +23,7 @@
         "input": "range",
         "min": 0,
         "max": 600,
-        "step": 100,
+        "step": 50,
         "name": "Catchment Buffer Size (m): "
       }
     },
@@ -150,9 +150,10 @@
             "titleFont": "Plus Jakarta Sans",
             "titleFontSize": 13,
             "titleFontWeight": "bold",
+            "titleLimit": 320,
             "labelFont": "Plus Jakarta Sans",
             "labelFontSize": 11.5,
-            "labelLimit": 290,
+            "labelLimit": 300,
             "symbolSize": 220
           }
         },
@@ -176,7 +177,7 @@
           {
             "lon": 151.8,
             "lat": -34.2,
-            "note": "Capital Corridor Disparity:;Inner-metro rings are well-served,;while outer growth fringes show red voids."
+            "note": "Capital Corridor Disparity:;Inner-metro rings are well-served,;while outer growth fringes show voids."
           }
         ]
       },
@@ -199,5 +200,8 @@
       }
     }
   ],
-  "config": {"view": {"stroke": null}}
+  "config": {
+    "view": {"stroke": null},
+    "legend": {"titleLimit": 320}
+  }
 }
