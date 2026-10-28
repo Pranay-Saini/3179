@@ -135,6 +135,13 @@
   .vis-container {
     width: 100%;
   }
+
+  #vis04 .vega-embed {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
   
   .chart-caption {
     font-size: 0.85rem;

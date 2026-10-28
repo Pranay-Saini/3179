@@ -34,7 +34,7 @@
       "color": {
         "field": "Compliance_Tier",
         "type": "nominal",
-        "title": "Wheelchair Audit Outcome (n = 58)",
+        "title": "Wheelchair Audit Outcome",
         "scale": {
           "domain": [
             "Verified Accessible: Yes (36% / 21 sites)",
