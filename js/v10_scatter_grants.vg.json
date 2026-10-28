@@ -12,23 +12,23 @@
     "subtitleFontSize": 12,
     "subtitleColor": "#475569",
     "anchor": "start",
-    "offset": 12
+    "offset": 14
   },
   "data": {"url": "data/nsw_everyone_can_play_clean.csv"},
   "transform": [
     {"calculate": "toNumber(datum.Decile)", "as": "Decile_Num"}
   ],
-  "spacing": 14,
+  "spacing": 24,
   "vconcat": [
     {
-      "width": 620,
-      "height": 175,
+      "width": 650,
+      "height": 280,
       "layer": [
         {
           "mark": {
             "type": "bar",
-            "cornerRadiusTopLeft": 3,
-            "cornerRadiusTopRight": 3
+            "cornerRadiusTopLeft": 4,
+            "cornerRadiusTopRight": 4
           },
           "encoding": {
             "x": {
@@ -42,9 +42,10 @@
               "field": "Amount",
               "type": "quantitative",
               "title": "Total Funding ($ AUD)",
+              "scale": {"domain": [0, 3800000]},
               "axis": {
                 "format": "$,.0s",
-                "tickCount": 4,
+                "tickCount": 6,
                 "grid": true,
                 "gridDash": [3, 3],
                 "gridColor": "#E2E8F0"
@@ -60,6 +61,9 @@
               },
               "legend": {
                 "orient": "top-left",
+                "fillColor": "rgba(255,255,255,0.9)",
+                "padding": 6,
+                "cornerRadius": 4,
                 "titleFont": "Plus Jakarta Sans",
                 "titleFontSize": 12,
                 "titleFontWeight": "bold",
@@ -79,16 +83,16 @@
         {
           "data": {
             "values": [
-              {"Decile_Num": 1, "y": 900000, "note": "Decile 1: $0;(0 grants)"}
+              {"Decile_Num": 1, "y": 650000, "note": "Decile 1: $0;(0 grants)"}
             ]
           },
           "transform": [{"calculate": "split(datum.note, ';')", "as": "lines"}],
           "mark": {
             "type": "text",
             "align": "left",
-            "dx": -18,
+            "dx": -22,
             "font": "Plus Jakarta Sans",
-            "fontSize": 11,
+            "fontSize": 11.5,
             "fontWeight": "bold",
             "color": "#B2182B"
           },
@@ -105,8 +109,8 @@
       ]
     },
     {
-      "width": 620,
-      "height": 165,
+      "width": 650,
+      "height": 260,
       "transform": [
         {
           "aggregate": [
@@ -126,13 +130,14 @@
           "type": "ordinal",
           "title": "Council ABS SEIFA Decile (1 = Most Disadvantaged, 10 = Most Advantaged)",
           "scale": {"domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
-          "axis": {"labelAngle": 0, "labelFontWeight": "bold"}
+          "axis": {"labelAngle": 0, "labelFontWeight": "bold", "titlePadding": 10}
         },
         "y": {
           "field": "Year",
           "type": "ordinal",
           "title": "Funding Round",
-          "sort": ["2018/19", "2019/20", "2020/21", "2021/22"]
+          "sort": ["2018/19", "2019/20", "2020/21", "2021/22"],
+          "axis": {"labelPadding": 6, "titlePadding": 10}
         }
       },
       "layer": [
@@ -141,7 +146,7 @@
             "type": "rect",
             "cornerRadius": 4,
             "stroke": "#FFFFFF",
-            "strokeWidth": 2
+            "strokeWidth": 2.5
           },
           "encoding": {
             "color": {
@@ -152,8 +157,10 @@
               "legend": {
                 "orient": "right",
                 "format": "$,.0s",
+                "gradientLength": 160,
                 "titleFont": "Plus Jakarta Sans",
                 "titleFontSize": 11.5,
+                "titleFontWeight": "bold",
                 "labelFont": "Plus Jakarta Sans",
                 "labelFontSize": 10.5
               }
@@ -170,7 +177,7 @@
           "mark": {
             "type": "text",
             "font": "Plus Jakarta Sans",
-            "fontSize": 10.5,
+            "fontSize": 11,
             "fontWeight": "bold",
             "align": "center",
             "baseline": "middle"

@@ -1,16 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 360,
+  "height": 400,
   "title": {
     "text": "Repeat Winners: Top 12 NSW Councils by Total Grant Funding",
     "subtitle": "Cumulative Everyone Can Play funding ($ AUD) and number of grants captured (2018/19–2021/22)",
     "font": "Merriweather",
-    "fontSize": 15.5,
+    "fontSize": 16,
     "fontWeight": "bold",
     "color": "#1E293B",
     "subtitleFont": "Plus Jakarta Sans",
-    "subtitleFontSize": 11.5,
+    "subtitleFontSize": 12,
     "subtitleColor": "#475569",
     "anchor": "start",
     "offset": 12
@@ -43,7 +43,11 @@
       "type": "nominal",
       "title": null,
       "sort": {"field": "Total_Funding", "order": "descending"},
-      "axis": {"labelLimit": 155, "labelFontWeight": "bold"}
+      "axis": {
+        "labelLimit": 260,
+        "labelPadding": 8,
+        "labelFontWeight": "bold"
+      }
     }
   },
   "layer": [
@@ -58,7 +62,7 @@
           "field": "Total_Funding",
           "type": "quantitative",
           "title": "Cumulative Grant Funding ($ AUD)",
-          "scale": {"domain": [0, 1350000]},
+          "scale": {"domain": [0, 1250000]},
           "axis": {
             "format": "$,.0s",
             "grid": true,

@@ -1,16 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 360,
+  "height": 380,
   "title": {
     "text": "The Reversal: Mean Grant Size by Cohort (2018/19–2021/22)",
     "subtitle": "Connected dot plot comparing Metropolitan vs Regional & Rural mean project funding across all 4 rounds",
     "font": "Merriweather",
-    "fontSize": 15.5,
+    "fontSize": 16,
     "fontWeight": "bold",
     "color": "#1E293B",
     "subtitleFont": "Plus Jakarta Sans",
-    "subtitleFontSize": 11.5,
+    "subtitleFontSize": 12,
     "subtitleColor": "#475569",
     "anchor": "start",
     "offset": 12
@@ -48,7 +48,7 @@
           "field": "Mean_Grant",
           "type": "quantitative",
           "title": "Mean Approved Grant per Project ($ AUD)",
-          "scale": {"domain": [85000, 185000]},
+          "scale": {"domain": [80000, 195000]},
           "axis": {
             "format": "$,.0f",
             "grid": true,
@@ -128,9 +128,16 @@
       "data": {
         "values": [
           {
+            "Year": "2019/20",
+            "x": 126500,
+            "note": "Rounds 1–2 Regional Lead:;Higher per-site grants offset;remote delivery costs",
+            "color": "#B2182B"
+          },
+          {
             "Year": "2021/22",
-            "x": 154000,
-            "note": "+$42,966 Metro Lead;in Round 4 (+42.6% growth)"
+            "x": 153500,
+            "note": "+$42,966 Metro Lead:;Round 4 surge (+42.6% YoY);from large co-funded parks",
+            "color": "#2166AC"
           }
         ]
       },
@@ -138,17 +145,17 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 8,
-        "dy": 4,
+        "dx": 6,
+        "dy": -4,
         "font": "Plus Jakarta Sans",
         "fontSize": 10.5,
-        "fontWeight": "bold",
-        "color": "#2166AC"
+        "fontWeight": "bold"
       },
       "encoding": {
         "y": {"field": "Year", "type": "ordinal"},
         "x": {"field": "x", "type": "quantitative"},
-        "text": {"field": "lines"}
+        "text": {"field": "lines"},
+        "color": {"field": "color", "type": "nominal", "scale": null}
       }
     }
   ],

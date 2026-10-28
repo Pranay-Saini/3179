@@ -30,7 +30,15 @@
   ],
   "transform": [
     {"filter": "datum.Playground_Count > 0"},
-    {"filter": "Cohort_Select == null || datum.Urban_Cohort == Cohort_Select"}
+    {"filter": "Cohort_Select == null || datum.Urban_Cohort == Cohort_Select"},
+    {
+      "aggregate": [
+        {"op": "mean", "field": "Playground_Count", "as": "Mean_Playgrounds"},
+        {"op": "mean", "field": "Toilet_CoLocation_Pct", "as": "Mean_Toilet_Pct"},
+        {"op": "count", "as": "Active_LGA_Count"}
+      ],
+      "groupby": ["State_Abbr"]
+    }
   ],
   "spacing": 12,
   "hconcat": [
@@ -50,8 +58,7 @@
           "sort": ["VIC", "NSW", "QLD", "WA", "SA", "TAS", "ACT", "NT"]
         },
         "x": {
-          "aggregate": "mean",
-          "field": "Playground_Count",
+          "field": "Mean_Playgrounds",
           "type": "quantitative",
           "title": "Mean Playgrounds / Active LGA",
           "sort": "descending",
@@ -66,26 +73,22 @@
         },
         "tooltip": [
           {"field": "State_Abbr", "type": "nominal", "title": "State"},
-          {
-            "aggregate": "mean",
-            "field": "Playground_Count",
-            "type": "quantitative",
-            "title": "Mean Playgrounds per LGA",
-            "format": ".1f"
-          }
+          {"field": "Mean_Playgrounds", "type": "quantitative", "title": "Mean Playgrounds per LGA", "format": ".1f"},
+          {"field": "Active_LGA_Count", "type": "quantitative", "title": "Active Councils (LGAs)"}
         ]
       }
     },
     {
-      "width": 70,
+      "width": 64,
       "height": 360,
       "mark": {
         "type": "text",
         "font": "Plus Jakarta Sans",
-        "fontWeight": "bold",
-        "fontSize": 13,
+        "fontWeight": 700,
+        "fontSize": 12.5,
         "color": "#1E293B",
-        "align": "center"
+        "align": "center",
+        "baseline": "middle"
       },
       "encoding": {
         "y": {
@@ -116,8 +119,7 @@
           "sort": ["VIC", "NSW", "QLD", "WA", "SA", "TAS", "ACT", "NT"]
         },
         "x": {
-          "aggregate": "mean",
-          "field": "Toilet_CoLocation_Pct",
+          "field": "Mean_Toilet_Pct",
           "type": "quantitative",
           "title": "Suburb Toilet Co-Location (%)",
           "scale": {"domain": [0, 100]},
@@ -132,13 +134,8 @@
         },
         "tooltip": [
           {"field": "State_Abbr", "type": "nominal", "title": "State"},
-          {
-            "aggregate": "mean",
-            "field": "Toilet_CoLocation_Pct",
-            "type": "quantitative",
-            "title": "Accessible Toilet Co-Location (%)",
-            "format": ".1f"
-          }
+          {"field": "Mean_Toilet_Pct", "type": "quantitative", "title": "Accessible Toilet Co-Location (%)", "format": ".1f"},
+          {"field": "Active_LGA_Count", "type": "quantitative", "title": "Active Councils (LGAs)"}
         ]
       }
     }

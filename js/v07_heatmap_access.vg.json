@@ -1,17 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 320,
+  "height": 330,
   "title": {
     "text": "The Surface-Accessibility Bottleneck",
     "subtitle": "Cross-tabulation of playground ground surface vs verified wheelchair rating (% within surface type)",
     "font": "Merriweather",
-    "fontSize": 15,
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "color": "#1E293B",
     "subtitleFont": "Plus Jakarta Sans",
-    "subtitleFontSize": 11.5,
-    "anchor": "start"
+    "subtitleFontSize": 12,
+    "subtitleColor": "#475569",
+    "anchor": "start",
+    "offset": 12
   },
-  "data": {"url": "../data/osm_playgrounds_clean.csv"},
+  "data": {"url": "data/osm_playgrounds_clean.csv"},
   "transform": [
     {"filter": "datum.Wheelchair_Clean != 'unrecorded'"},
     {
@@ -46,7 +50,13 @@
       "field": "Surface_Clean",
       "type": "nominal",
       "title": "Ground Surface Category",
-      "sort": ["Impact Rubber", "Woodchips & Bark", "Sand", "Concrete & Paved", "Unrecorded"]
+      "sort": [
+        "Impact Rubber",
+        "Woodchips & Bark",
+        "Sand",
+        "Concrete & Paved",
+        "Unrecorded"
+      ]
     }
   },
   "layer": [
@@ -62,7 +72,14 @@
           "field": "Row_Pct",
           "type": "quantitative",
           "title": "Share of Surface (%)",
-          "scale": {"scheme": "tealblues", "domain": [0, 100]}
+          "scale": {"scheme": "tealblues", "domain": [0, 100]},
+          "legend": {
+            "titleFont": "Plus Jakarta Sans",
+            "titleFontSize": 11.5,
+            "titleFontWeight": "bold",
+            "labelFont": "Plus Jakarta Sans",
+            "labelFontSize": 11
+          }
         },
         "tooltip": [
           {"field": "Surface_Clean", "type": "nominal", "title": "Surface Material"},
@@ -75,6 +92,7 @@
     {
       "mark": {
         "type": "text",
+        "font": "Plus Jakarta Sans",
         "baseline": "middle",
         "align": "center",
         "fontWeight": "bold",
@@ -89,5 +107,16 @@
       }
     }
   ],
-  "config": {"view": {"stroke": null}}
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "labelFont": "Plus Jakarta Sans",
+      "labelFontSize": 11,
+      "labelColor": "#475569",
+      "titleFont": "Plus Jakarta Sans",
+      "titleFontSize": 12,
+      "titleFontWeight": "bold",
+      "titleColor": "#1E293B"
+    }
+  }
 }

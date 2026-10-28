@@ -1,7 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 470,
+  "height": 500,
+  "autosize": {"type": "fit", "contains": "padding"},
+  "padding": {"top": 4, "left": 4, "right": 4, "bottom": 4},
   "title": {
     "text": "Playgrounds per 10,000 Children (Aged 0–14) by Local Government Area",
     "subtitle": "Municipal playground counts normalized by ABS child population (0–14 yrs) & SEIFA Scores (Use controls to zoom & pan)",
@@ -13,7 +15,7 @@
     "subtitleFontSize": 12,
     "subtitleColor": "#475569",
     "anchor": "start",
-    "offset": 12
+    "offset": 10
   },
   "params": [
     {
@@ -29,16 +31,16 @@
     },
     {
       "name": "center_to",
-      "value": [134.0, -28.5],
+      "value": [133.8, -28.2],
       "bind": {
         "input": "select",
         "options": [
-          [134.0, -28.5],
+          [133.8, -28.2],
           [144.96, -37.81],
           [151.0, -33.85],
           [153.02, -27.47],
           [115.86, -31.95],
-          [138.60, -34.92]
+          [138.6, -34.92]
         ],
         "labels": [
           "Australia National View",
@@ -125,18 +127,36 @@
         "color": {
           "field": "Parks_Per_10k_Kids",
           "type": "quantitative",
-          "title": "Playgrounds / 10k Kids (0–14)",
+          "title": ["Playgrounds /", "10k Kids (0–14)"],
           "scale": {
             "type": "threshold",
             "domain": [0.1, 2, 5, 10, 20],
-            "range": ["#E2E8F0", "#CCFBF1", "#5EEAD4", "#14B8A6", "#0F766E", "#115E59"]
+            "range": [
+              "#E2E8F0",
+              "#CCFBF1",
+              "#5EEAD4",
+              "#14B8A6",
+              "#0F766E",
+              "#115E59"
+            ]
           },
           "legend": {
+            "orient": "top-right",
+            "offset": 10,
+            "fillColor": "rgba(255, 255, 255, 0.92)",
+            "strokeColor": "#CBD5E1",
+            "cornerRadius": 6,
+            "padding": 8,
+            "gradientLength": 105,
+            "gradientThickness": 10,
             "titleFont": "Plus Jakarta Sans",
-            "titleFontSize": 12,
+            "titleFontSize": 10.5,
+            "titleLineHeight": 13,
             "titleFontWeight": "bold",
+            "titleColor": "#1E293B",
             "labelFont": "Plus Jakarta Sans",
-            "labelFontSize": 11
+            "labelFontSize": 10,
+            "labelColor": "#334155"
           }
         },
         "tooltip": [
@@ -154,13 +174,13 @@
       "data": {
         "values": [
           {
-            "lon": 130.5,
-            "lat": -23.5,
+            "lon": 131,
+            "lat": -23,
             "note": "Inland Registry Void:;253 of 547 LGAs (46.3%);record 0 playgrounds (<0.1)."
           },
           {
-            "lon": 138,
-            "lat": -39,
+            "lon": 138.0,
+            "lat": -39.2,
             "note": "Small-Denominator Peak:;VIC/SA rural shires exceed;20+ parks per 10k kids."
           }
         ]

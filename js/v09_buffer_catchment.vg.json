@@ -18,10 +18,10 @@
   "params": [
     {
       "name": "Buffer_Radius",
-      "value": 200,
+      "value": 100,
       "bind": {
         "input": "range",
-        "min": 100,
+        "min": 0,
         "max": 600,
         "step": 100,
         "name": "Catchment Buffer Size (m): "
@@ -38,7 +38,7 @@
           [151.05, -33.84],
           [153.02, -27.47],
           [115.86, -31.95],
-          [138.60, -34.92],
+          [138.6, -34.92],
           [147.32, -42.88]
         ],
         "labels": [
@@ -79,11 +79,14 @@
     {
       "data": {"url": "data/toilets_national_parks.csv"},
       "transform": [
-        {"calculate": "(Buffer_Radius / 200) * 180", "as": "buffer_area"}
+        {"calculate": "(Buffer_Radius / 200) * 180", "as": "buffer_area"},
+        {
+          "calculate": "'Accessible Park Toilet Buffer (Catchment)'",
+          "as": "Catchment_Legend"
+        }
       ],
       "mark": {
         "type": "circle",
-        "fill": "#009E73",
         "fillOpacity": 0.18,
         "stroke": "#009E73",
         "strokeWidth": 0.7
@@ -92,6 +95,19 @@
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
         "size": {"field": "buffer_area", "type": "quantitative", "scale": null},
+        "color": {
+          "field": "Catchment_Legend",
+          "type": "nominal",
+          "title": "Sanitary Co-Location & Catchment",
+          "scale": {
+            "domain": [
+              "Served (Accessible Park Toilet in Suburb)",
+              "Unserved (No Accessible Park Toilet in Suburb)",
+              "Accessible Park Toilet Buffer (Catchment)"
+            ],
+            "range": ["#2166AC", "#B2182B", "#009E73"]
+          }
+        },
         "tooltip": [
           {"field": "Name", "type": "nominal", "title": "Accessible Park Toilet"},
           {"field": "Town", "type": "nominal", "title": "Suburb / Town"},
@@ -115,13 +131,14 @@
         "color": {
           "field": "Toilet_Catchment_Status",
           "type": "nominal",
-          "title": "Sanitary Co-Location Status",
+          "title": "Sanitary Co-Location & Catchment",
           "scale": {
             "domain": [
               "Served (Accessible Park Toilet in Suburb)",
-              "Unserved (No Accessible Park Toilet in Suburb)"
+              "Unserved (No Accessible Park Toilet in Suburb)",
+              "Accessible Park Toilet Buffer (Catchment)"
             ],
-            "range": ["#2166AC", "#B2182B"]
+            "range": ["#2166AC", "#B2182B", "#009E73"]
           },
           "legend": {
             "orient": "top-right",
@@ -134,8 +151,8 @@
             "titleFontSize": 13,
             "titleFontWeight": "bold",
             "labelFont": "Plus Jakarta Sans",
-            "labelFontSize": 12,
-            "labelLimit": 280,
+            "labelFontSize": 11.5,
+            "labelLimit": 290,
             "symbolSize": 220
           }
         },

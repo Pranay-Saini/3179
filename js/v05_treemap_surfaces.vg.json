@@ -1,9 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "width": 1060,
-  "height": 380,
-  "padding": 4,
-  "autosize": {"type": "fit", "contains": "padding", "resize": true},
+  "height": 400,
+  "padding": {"top": 4, "left": 2, "right": 2, "bottom": 4},
+  "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
+  "signals": [
+    {
+      "name": "width",
+      "init": "isFinite(containerSize()[0]) && containerSize()[0] > 200 ? containerSize()[0] - 8 : 1110",
+      "on": [
+        {
+          "events": "window:resize",
+          "update": "isFinite(containerSize()[0]) && containerSize()[0] > 200 ? containerSize()[0] - 8 : 1110"
+        }
+      ]
+    }
+  ],
   "title": {
     "text": "Audited Playground Surface Materials (n = 423)",
     "subtitle": "Two-level hierarchy: Construction Category (outer frames) → Ground Surface Material (inner tiles)",
@@ -39,7 +50,7 @@
           "sort": {"field": "value", "order": "descending"},
           "round": true,
           "method": "squarify",
-          "paddingTop": 30,
+          "paddingTop": 42,
           "paddingInner": 6,
           "paddingOuter": 6,
           "size": [{"signal": "width"}, {"signal": "height"}]
@@ -92,7 +103,7 @@
         },
         "update": {
           "x": {"field": "x0"},
-          "y": {"field": "y0"},
+          "y": {"field": "y0", "offset": -32},
           "x2": {"field": "x1"},
           "y2": {"field": "y1"}
         }
@@ -115,7 +126,7 @@
           "y2": {"field": "y1"},
           "fillOpacity": {"value": 0.95},
           "tooltip": {
-            "signal": "{'Surface Material': datum.id, 'Hierarchy Parent': datum.parent, 'Audited Playgrounds': datum.Site_Count, 'National Share': datum.pct}"
+            "signal": "{'Surface Material': datum.id, 'Construction Category': datum.parent, 'Audited Playgrounds': datum.Site_Count, 'National Share': datum.pct}"
           }
         },
         "hover": {
@@ -131,14 +142,46 @@
         "enter": {
           "font": {"value": "Plus Jakarta Sans"},
           "fontWeight": {"value": "bold"},
-          "fontSize": {"value": 13},
           "fill": {"value": "#0F172A"},
           "baseline": {"value": "top"}
         },
         "update": {
-          "x": {"field": "x0", "offset": 10},
-          "y": {"field": "y0", "offset": 8},
-          "text": {"signal": "upper(datum.id) + ' — ' + datum.pct"}
+          "x": {
+            "signal": "datum.id === 'Loose-fill' ? datum.x0 + 10 : (datum.x0 + datum.x1) / 2"
+          },
+          "y": {
+            "signal": "datum.id === 'Loose-fill' ? datum.y0 - 20 : datum.y0 - 25"
+          },
+          "align": {
+            "signal": "datum.id === 'Loose-fill' ? 'left' : 'center'"
+          },
+          "fontSize": {
+            "signal": "datum.id === 'Loose-fill' ? 13 : 10"
+          },
+          "text": {
+            "signal": "datum.id === 'Loose-fill' ? 'LOOSE-FILL — ' + datum.pct : 'NON LOOSE-FILL'"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "parent_groups"},
+      "encode": {
+        "enter": {
+          "font": {"value": "Plus Jakarta Sans"},
+          "fontWeight": {"value": "bold"},
+          "fill": {"value": "#334155"},
+          "baseline": {"value": "top"},
+          "align": {"value": "center"},
+          "fontSize": {"value": 9.5}
+        },
+        "update": {
+          "x": {"signal": "(datum.x0 + datum.x1) / 2"},
+          "y": {"signal": "datum.y0 - 11"},
+          "text": {
+            "signal": "datum.id === 'Non loose-fill' ? datum.pct : ''"
+          }
         }
       }
     },
@@ -152,16 +195,16 @@
           "baseline": {"value": "top"}
         },
         "update": {
-          "x": {"field": "x0", "offset": 8},
+          "x": {"field": "x0", "offset": 6},
           "y": {"field": "y0", "offset": 8},
           "fill": {
             "signal": "datum.id === 'Sand' || datum.id === 'Woodchips & Bark' ? '#0F172A' : '#FFFFFF'"
           },
           "text": {
-            "signal": "(datum.x1 - datum.x0) > 65 && (datum.y1 - datum.y0) > 26 ? datum.id + ' (' + datum.pct + ')' : ''"
+            "signal": "(datum.x1 - datum.x0) > 120 && (datum.y1 - datum.y0) > 26 ? datum.id + ' (' + datum.pct + ')' : ((datum.x1 - datum.x0) > 48 && (datum.y1 - datum.y0) > 24 ? datum.id : '')"
           },
           "fontSize": {
-            "signal": "(datum.x1 - datum.x0) > 180 ? 13 : 11"
+            "signal": "(datum.x1 - datum.x0) > 180 ? 13 : 10"
           }
         }
       }
@@ -176,15 +219,17 @@
           "baseline": {"value": "top"}
         },
         "update": {
-          "x": {"field": "x0", "offset": 8},
-          "y": {"field": "y0", "offset": 26},
+          "x": {"field": "x0", "offset": 6},
+          "y": {"field": "y0", "offset": 24},
           "fill": {
             "signal": "datum.id === 'Sand' || datum.id === 'Woodchips & Bark' ? '#334155' : '#F8FAFC'"
           },
           "text": {
-            "signal": "(datum.x1 - datum.x0) > 95 && (datum.y1 - datum.y0) > 48 ? datum.Site_Count + ' audited sites' : ''"
+            "signal": "(datum.x1 - datum.x0) > 120 && (datum.y1 - datum.y0) > 46 ? datum.Site_Count + ' audited sites' : ((datum.x1 - datum.x0) > 48 && (datum.y1 - datum.y0) > 40 ? datum.pct + ' (' + datum.Site_Count + ')' : '')"
           },
-          "fontSize": {"value": 11}
+          "fontSize": {
+            "signal": "(datum.x1 - datum.x0) > 120 ? 11 : 9.5"
+          }
         }
       }
     }
