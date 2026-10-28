@@ -1,98 +1,253 @@
 {
-    "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "width": 500,
-    "height": 340,
-    "padding": 5,
-    "title": {
-      "text": "Audited Playground Surface Materials (n = 423)",
-      "subtitle": "Squarified treemap of ground surfaces (Woodchips & Sand represent 88.4% of audited sites)",
-      "font": "Merriweather",
-      "fontSize": 15,
-      "subtitleFont": "Plus Jakarta Sans",
-      "subtitleFontSize": 11.5,
-      "anchor": "start"
-    },
-    "data": [
-      {
-        "name": "tree_nodes",
-        "values": [
-          {"id": "Audited Surfaces", "parent": null, "Site_Count": null},
-          {"id": "Woodchips & Bark", "parent": "Audited Surfaces", "Site_Count": 190, "pct": "44.9%"},
-          {"id": "Sand", "parent": "Audited Surfaces", "Site_Count": 184, "pct": "43.5%"},
-          {"id": "Impact Rubber", "parent": "Audited Surfaces", "Site_Count": 18, "pct": "4.3%"},
-          {"id": "Earth & Gravel", "parent": "Audited Surfaces", "Site_Count": 12, "pct": "2.8%"},
-          {"id": "Grass & Turf", "parent": "Audited Surfaces", "Site_Count": 10, "pct": "2.4%"},
-          {"id": "Concrete & Paved", "parent": "Audited Surfaces", "Site_Count": 9, "pct": "2.1%"}
-        ],
-        "transform": [
-          {"type": "stratify", "key": "id", "parentKey": "parent"},
-          {
-            "type": "treemap",
-            "field": "Site_Count",
-            "sort": {"field": "value", "order": "descending"},
-            "round": true,
-            "method": "squarify",
-            "paddingInner": 3,
-            "size": [{"signal": "width"}, {"signal": "height"}]
-          }
-        ]
-      }
-    ],
-    "scales": [
-      {
-        "name": "color",
-        "type": "ordinal",
-        "domain": [
-          "Woodchips & Bark",
-          "Sand",
-          "Impact Rubber",
-          "Earth & Gravel",
-          "Grass & Turf",
-          "Concrete & Paved"
-        ],
-        "range": ["#B45309", "#D97706", "#0F766E", "#78716C", "#4D7C0F", "#475569"]
-      }
-    ],
-    "marks": [
-      {
-        "type": "rect",
-        "from": {"data": "tree_nodes"},
-        "encode": {
-          "enter": {
-            "fill": {"scale": "color", "field": "id"},
-            "stroke": {"value": "#FFFFFF"},
-            "strokeWidth": {"value": 2}
-          },
-          "update": {
-            "x": {"field": "x0"},
-            "y": {"field": "y0"},
-            "x2": {"field": "x1"},
-            "y2": {"field": "y1"},
-            "fillOpacity": {"signal": "datum.depth > 0 ? 0.92 : 0"},
-            "tooltip": {
-              "signal": "datum.depth > 0 ? {'Surface Material': datum.id, 'Audited Playgrounds': datum.Site_Count, 'Share of Audited Sites': datum.pct} : null"
-            }
-          },
-          "hover": {"fillOpacity": {"value": 1}}
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 500,
+  "height": 340,
+  "padding": 5,
+
+  "title": {
+    "text": "Audited Playground Surface Materials (n = 423)",
+    "subtitle": "Surface materials grouped by loose-fill and non loose-fill construction",
+    "font": "Merriweather",
+    "fontSize": 15,
+    "subtitleFont": "Plus Jakarta Sans",
+    "subtitleFontSize": 11.5,
+    "anchor": "start"
+  },
+
+  "data": [
+    {
+      "name": "tree_nodes",
+      "values": [
+        {
+          "id": "Audited Surfaces",
+          "parent": null,
+          "Site_Count": null
+        },
+
+        {
+          "id": "Loose-fill",
+          "parent": "Audited Surfaces",
+          "Site_Count": null,
+          "pct": "91.3%"
+        },
+        {
+          "id": "Woodchips & Bark",
+          "parent": "Loose-fill",
+          "Site_Count": 190,
+          "pct": "44.9%"
+        },
+        {
+          "id": "Sand",
+          "parent": "Loose-fill",
+          "Site_Count": 184,
+          "pct": "43.5%"
+        },
+        {
+          "id": "Earth & Gravel",
+          "parent": "Loose-fill",
+          "Site_Count": 12,
+          "pct": "2.8%"
+        },
+
+        {
+          "id": "Non loose-fill",
+          "parent": "Audited Surfaces",
+          "Site_Count": null,
+          "pct": "8.7%"
+        },
+        {
+          "id": "Impact Rubber",
+          "parent": "Non loose-fill",
+          "Site_Count": 18,
+          "pct": "4.3%"
+        },
+        {
+          "id": "Grass & Turf",
+          "parent": "Non loose-fill",
+          "Site_Count": 10,
+          "pct": "2.4%"
+        },
+        {
+          "id": "Concrete & Paved",
+          "parent": "Non loose-fill",
+          "Site_Count": 9,
+          "pct": "2.1%"
         }
+      ],
+
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "treemap",
+          "field": "Site_Count",
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "round": true,
+          "method": "squarify",
+          "paddingInner": 1,
+          "paddingOuter": 1,
+          "size": [
+            {"signal": "width"},
+            {"signal": "height"}
+          ]
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": [
+        "Woodchips & Bark",
+        "Sand",
+        "Earth & Gravel",
+        "Impact Rubber",
+        "Grass & Turf",
+        "Concrete & Paved"
+      ],
+      "range": [
+        "#B45309",
+        "#D97706",
+        "#A16207",
+        "#0F766E",
+        "#4D7C0F",
+        "#475569"
+      ]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "tree_nodes"
       },
-      {
-        "type": "text",
-        "from": {"data": "tree_nodes"},
-        "encode": {
-          "enter": {
-            "font": {"value": "Plus Jakarta Sans"},
-            "fontWeight": {"value": "bold"},
-            "fill": {"value": "#FFFFFF"},
-            "baseline": {"value": "top"}
+      "encode": {
+        "enter": {
+          "fill": {
+            "scale": "color",
+            "field": "id"
           },
-          "update": {
-            "x": {"field": "x0", "offset": 8},
-            "y": {"field": "y0", "offset": 10},
-            "text": {"signal": "datum.depth > 0 && (datum.x1 - datum.x0) > 65 ? datum.id + ' (' + datum.pct + ')' : ''"},
-            "fontSize": {"signal": "(datum.x1 - datum.x0) > 140 ? 13 : 10"}
+          "stroke": {
+            "value": "#FFFFFF"
+          },
+          "strokeWidth": {
+            "value": 1
+          }
+        },
+        "update": {
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"},
+
+          "fillOpacity": {
+            "signal": "datum.depth === 2 ? 0.94 : 0"
+          },
+
+          "tooltip": {
+            "signal": "datum.depth === 2 ? {'Surface Material': datum.id, 'Category': datum.parent, 'Audited Playgrounds': datum.Site_Count, 'Share of Audited Sites': datum.pct} : null"
+          }
+        },
+
+        "hover": {
+          "fillOpacity": {
+            "value": 1
           }
         }
       }
-    ]
-  }
+    },
+
+    {
+      "type": "text",
+      "from": {
+        "data": "tree_nodes"
+      },
+      "encode": {
+        "enter": {
+          "font": {
+            "value": "Plus Jakarta Sans"
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#FFFFFF"
+          },
+          "baseline": {
+            "value": "top"
+          }
+        },
+
+        "update": {
+          "x": {
+            "field": "x0",
+            "offset": 7
+          },
+          "y": {
+            "field": "y0",
+            "offset": 8
+          },
+
+          "text": {
+            "signal": "datum.depth === 2 && (datum.x1 - datum.x0) > 55 ? datum.id + ' (' + datum.pct + ')' : ''"
+          },
+
+          "fontSize": {
+            "signal": "(datum.x1 - datum.x0) > 140 ? 13 : 10"
+          }
+        }
+      }
+    },
+
+    {
+      "type": "text",
+      "from": {
+        "data": "tree_nodes"
+      },
+      "encode": {
+        "enter": {
+          "font": {
+            "value": "Plus Jakarta Sans"
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#334155"
+          },
+          "baseline": {
+            "value": "bottom"
+          }
+        },
+
+        "update": {
+          "x": {
+            "field": "x0",
+            "offset": 4
+          },
+          "y": {
+            "field": "y0",
+            "offset": -3
+          },
+
+          "text": {
+            "signal": "datum.depth === 1 ? datum.id + ' (' + datum.pct + ')' : ''"
+          },
+
+          "fontSize": {
+            "value": 11
+          }
+        }
+      }
+    }
+  ]
+}

@@ -63,7 +63,7 @@
     {
       "data": {
         "url": "data/aus_states.topojson",
-        "format": {"type": "topojson", "feature": "states"}
+        "format": {"type": "topojson", "feature": "States"}
       },
       "mark": {
         "type": "geoshape",
