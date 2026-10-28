@@ -1,15 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 360,
+  "height": 500,
   "title": {
     "text": "The Family Dwell-Time Barrier: National Sanitary Catchments",
-    "subtitle": "Accessible Park/Reserve Toilets (green buffers) vs Playgrounds across Australia (56.2% suburb co-location)",
+    "subtitle": "Accessible Park/Reserve Toilets (buffers) vs Playgrounds across Australia (56.2% suburb co-location)",
     "font": "Merriweather",
-    "fontSize": 15,
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "color": "#1E293B",
     "subtitleFont": "Plus Jakarta Sans",
-    "subtitleFontSize": 11.5,
-    "anchor": "start"
+    "subtitleFontSize": 12,
+    "subtitleColor": "#475569",
+    "anchor": "start",
+    "offset": 12
   },
   "params": [
     {
@@ -53,7 +57,7 @@
   "projection": {
     "type": "equirectangular",
     "center": {"expr": "region_view"},
-    "scale": {"expr": "region_view[0] == 134.0 ? 650 : 28000"}
+    "scale": {"expr": "region_view[0] == 134.0 ? 780 : 28000"}
   },
   "layer": [
     {
@@ -79,9 +83,9 @@
       ],
       "mark": {
         "type": "circle",
-        "fill": "#0F766E",
+        "fill": "#009E73",
         "fillOpacity": 0.18,
-        "stroke": "#0F766E",
+        "stroke": "#009E73",
         "strokeWidth": 0.7
       },
       "encoding": {
@@ -102,7 +106,7 @@
       "data": {"url": "data/osm_playgrounds_clean.csv"},
       "mark": {
         "type": "circle",
-        "size": 28,
+        "size": 34,
         "opacity": 0.85
       },
       "encoding": {
@@ -111,15 +115,29 @@
         "color": {
           "field": "Toilet_Catchment_Status",
           "type": "nominal",
-          "title": "Sanitary Co-Location",
+          "title": "Sanitary Co-Location Status",
           "scale": {
             "domain": [
               "Served (Accessible Park Toilet in Suburb)",
               "Unserved (No Accessible Park Toilet in Suburb)"
             ],
-            "range": ["#1E3A8A", "#E11D48"]
+            "range": ["#2166AC", "#B2182B"]
           },
-          "legend": {"orient": "bottom", "direction": "vertical"}
+          "legend": {
+            "orient": "top-right",
+            "fillColor": "#FFFFFF",
+            "strokeColor": "#CBD5E1",
+            "cornerRadius": 6,
+            "padding": 12,
+            "rowPadding": 8,
+            "titleFont": "Plus Jakarta Sans",
+            "titleFontSize": 13,
+            "titleFontWeight": "bold",
+            "labelFont": "Plus Jakarta Sans",
+            "labelFontSize": 12,
+            "labelLimit": 280,
+            "symbolSize": 220
+          }
         },
         "tooltip": [
           {"field": "Name_Clean", "type": "nominal", "title": "Playground"},
@@ -128,6 +146,39 @@
           {"field": "Toilet_Catchment_Status", "type": "nominal", "title": "Sanitary Status"},
           {"field": "Accessible_Park_Toilets", "type": "quantitative", "title": "Accessible Park Toilets in Suburb"}
         ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 122,
+            "lat": -27,
+            "note": "National Dwell-Time Gap:;43.8% of playgrounds (981 sites);lack an accessible park toilet;within their suburb catchment."
+          },
+          {
+            "lon": 151.8,
+            "lat": -34.2,
+            "note": "Capital Corridor Disparity:;Inner-metro rings are well-served,;while outer growth fringes show red voids."
+          }
+        ]
+      },
+      "transform": [
+        {"filter": "region_view[0] == 134.0"},
+        {"calculate": "split(datum.note, ';')", "as": "note_lines"}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "font": "Plus Jakarta Sans",
+        "fontSize": 11.5,
+        "fontWeight": "bold",
+        "color": "#0F172A"
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "note_lines"}
       }
     }
   ],

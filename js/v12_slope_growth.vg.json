@@ -1,75 +1,145 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
-    "height": 340,
-    "title": {
-      "text": "Diverging Trajectories: Metro vs Regional Grants",
-      "subtitle": "Mean grant size from Round 1 (2018/19) to Round 4 (2021/22): Metro (+42.6%) vs Regional (-12.5%)",
-      "font": "Merriweather",
-      "fontSize": 15,
-      "subtitleFont": "Plus Jakarta Sans",
-      "subtitleFontSize": 11.5,
-      "anchor": "start"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 360,
+  "title": {
+    "text": "Repeat Winners: Top 12 NSW Councils by Total Grant Funding",
+    "subtitle": "Cumulative Everyone Can Play funding ($ AUD) and number of grants captured (2018/19–2021/22)",
+    "font": "Merriweather",
+    "fontSize": 15.5,
+    "fontWeight": "bold",
+    "color": "#1E293B",
+    "subtitleFont": "Plus Jakarta Sans",
+    "subtitleFontSize": 11.5,
+    "subtitleColor": "#475569",
+    "anchor": "start",
+    "offset": 12
+  },
+  "data": {"url": "data/nsw_everyone_can_play_clean.csv"},
+  "transform": [
+    {
+      "aggregate": [
+        {"op": "sum", "field": "Amount", "as": "Total_Funding"},
+        {"op": "count", "as": "Grant_Count"},
+        {"op": "mean", "field": "Score", "as": "Mean_SEIFA"},
+        {"op": "max", "field": "Decile", "as": "SEIFA_Decile"},
+        {"op": "max", "field": "Council_Cohort", "as": "Council_Cohort"}
+      ],
+      "groupby": ["Council"]
     },
-    "data": {"url": "data/nsw_everyone_can_play_clean.csv"},
-    "transform": [
-      {"filter": "datum.Year == '2018/19' || datum.Year == '2021/22'"},
-      {
-        "aggregate": [{"op": "mean", "field": "Amount", "as": "Mean_Grant"}],
-        "groupby": ["Year", "Council_Cohort"]
-      }
-    ],
-    "encoding": {
-      "x": {
-        "field": "Year",
-        "type": "ordinal",
-        "title": "Funding Benchmark Round",
-        "axis": {"labelAngle": 0, "labelFontWeight": "bold"}
-      },
-      "y": {
-        "field": "Mean_Grant",
-        "type": "quantitative",
-        "title": "Mean Project Grant ($ AUD)",
-        "scale": {"domain": [90000, 170000]},
-        "axis": {"format": "$,.0f"}
-      },
-      "color": {
-        "field": "Council_Cohort",
-        "type": "nominal",
-        "title": "Council Cohort",
-        "scale": {
-          "domain": ["Metropolitan", "Regional & Rural"],
-          "range": ["#0F766E", "#D95F02"]
-        }
-      }
+    {
+      "window": [{"op": "rank", "as": "Rank"}],
+      "sort": [{"field": "Total_Funding", "order": "descending"}]
     },
-    "layer": [
-      {
-        "mark": {"type": "line", "strokeWidth": 3.5}
+    {"filter": "datum.Rank <= 12"},
+    {
+      "calculate": "'$' + format(datum.Total_Funding / 1000, ',.0f') + 'k (' + datum.Grant_Count + ' grants)'",
+      "as": "Funding_Label"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "Council",
+      "type": "nominal",
+      "title": null,
+      "sort": {"field": "Total_Funding", "order": "descending"},
+      "axis": {"labelLimit": 155, "labelFontWeight": "bold"}
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 3.5,
+        "opacity": 0.85
       },
-      {
-        "mark": {"type": "point", "filled": true, "size": 150},
-        "encoding": {
-          "tooltip": [
-            {"field": "Council_Cohort", "type": "nominal", "title": "Cohort"},
-            {"field": "Year", "type": "ordinal", "title": "Financial Year"},
-            {"field": "Mean_Grant", "type": "quantitative", "title": "Mean Grant ($)", "format": "$,.0f"}
-          ]
-        }
-      },
-      {
-        "mark": {
-          "type": "text",
-          "align": "left",
-          "dx": 10,
-          "dy": -6,
-          "fontWeight": "bold",
-          "fontSize": 11.5
+      "encoding": {
+        "x": {
+          "field": "Total_Funding",
+          "type": "quantitative",
+          "title": "Cumulative Grant Funding ($ AUD)",
+          "scale": {"domain": [0, 1350000]},
+          "axis": {
+            "format": "$,.0s",
+            "grid": true,
+            "gridDash": [3, 3],
+            "gridColor": "#E2E8F0"
+          }
         },
-        "encoding": {
-          "text": {"field": "Mean_Grant", "type": "quantitative", "format": "$,.0f"}
+        "color": {
+          "field": "Council_Cohort",
+          "type": "nominal",
+          "title": "Council Cohort",
+          "scale": {
+            "domain": ["Metropolitan", "Regional & Rural"],
+            "range": ["#2166AC", "#B2182B"]
+          },
+          "legend": {
+            "orient": "top",
+            "titleFont": "Plus Jakarta Sans",
+            "titleFontSize": 12,
+            "titleFontWeight": "bold",
+            "labelFont": "Plus Jakarta Sans",
+            "labelFontSize": 11.5,
+            "symbolSize": 180
+          }
         }
       }
-    ],
-    "config": {"view": {"stroke": null}}
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 190,
+        "opacity": 1,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {"field": "Total_Funding", "type": "quantitative"},
+        "color": {
+          "field": "Council_Cohort",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Metropolitan", "Regional & Rural"],
+            "range": ["#2166AC", "#B2182B"]
+          }
+        },
+        "tooltip": [
+          {"field": "Council", "type": "nominal", "title": "Council (LGA)"},
+          {"field": "Council_Cohort", "type": "nominal", "title": "Cohort"},
+          {"field": "Total_Funding", "type": "quantitative", "title": "Total Funding ($)", "format": "$,.0f"},
+          {"field": "Grant_Count", "type": "quantitative", "title": "Projects Funded"},
+          {"field": "SEIFA_Decile", "type": "ordinal", "title": "ABS SEIFA Decile"},
+          {"field": "Mean_SEIFA", "type": "quantitative", "title": "SEIFA Score", "format": ".0f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "font": "Plus Jakarta Sans",
+        "fontSize": 10.5,
+        "fontWeight": "bold",
+        "color": "#1E293B"
+      },
+      "encoding": {
+        "x": {"field": "Total_Funding", "type": "quantitative"},
+        "text": {"field": "Funding_Label", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "labelFont": "Plus Jakarta Sans",
+      "labelFontSize": 11,
+      "labelColor": "#475569",
+      "titleFont": "Plus Jakarta Sans",
+      "titleFontSize": 12,
+      "titleFontWeight": "bold",
+      "titleColor": "#1E293B"
+    }
   }
+}

@@ -1,89 +1,202 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
-    "height": 340,
-    "title": {
-      "text": "Did State Grants Target Disadvantaged Communities? (n = 140)",
-      "subtitle": "NSW Everyone Can Play grant allocations ($ AUD) vs Council ABS SEIFA Score (r = 0.025)",
-      "font": "Merriweather",
-      "fontSize": 15,
-      "subtitleFont": "Plus Jakarta Sans",
-      "subtitleFontSize": 11.5,
-      "anchor": "start"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "autosize": {"type": "fit-x", "contains": "padding"},
+  "title": {
+    "text": "Socioeconomic Grant Capture Across ABS SEIFA Deciles (n = 140, $19.08M)",
+    "subtitle": "Cumulative funding by council cohort (top bar chart) combined with annual funding intensity heatmap (bottom)",
+    "font": "Merriweather",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "color": "#1E293B",
+    "subtitleFont": "Plus Jakarta Sans",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#475569",
+    "anchor": "start",
+    "offset": 12
+  },
+  "data": {"url": "data/nsw_everyone_can_play_clean.csv"},
+  "transform": [
+    {"calculate": "toNumber(datum.Decile)", "as": "Decile_Num"}
+  ],
+  "spacing": 14,
+  "vconcat": [
+    {
+      "width": 620,
+      "height": 175,
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "cornerRadiusTopLeft": 3,
+            "cornerRadiusTopRight": 3
+          },
+          "encoding": {
+            "x": {
+              "field": "Decile_Num",
+              "type": "ordinal",
+              "scale": {"domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
+              "axis": null
+            },
+            "y": {
+              "aggregate": "sum",
+              "field": "Amount",
+              "type": "quantitative",
+              "title": "Total Funding ($ AUD)",
+              "axis": {
+                "format": "$,.0s",
+                "tickCount": 4,
+                "grid": true,
+                "gridDash": [3, 3],
+                "gridColor": "#E2E8F0"
+              }
+            },
+            "color": {
+              "field": "Council_Cohort",
+              "type": "nominal",
+              "title": "Council Cohort",
+              "scale": {
+                "domain": ["Metropolitan", "Regional & Rural"],
+                "range": ["#2166AC", "#B2182B"]
+              },
+              "legend": {
+                "orient": "top-left",
+                "titleFont": "Plus Jakarta Sans",
+                "titleFontSize": 12,
+                "titleFontWeight": "bold",
+                "labelFont": "Plus Jakarta Sans",
+                "labelFontSize": 11.5,
+                "symbolSize": 160
+              }
+            },
+            "tooltip": [
+              {"field": "Decile_Num", "type": "ordinal", "title": "ABS SEIFA Decile"},
+              {"field": "Council_Cohort", "type": "nominal", "title": "Council Cohort"},
+              {"aggregate": "sum", "field": "Amount", "type": "quantitative", "title": "Cohort Funding ($)", "format": "$,.0f"},
+              {"aggregate": "count", "type": "quantitative", "title": "Funded Projects"}
+            ]
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {"Decile_Num": 1, "y": 900000, "note": "Decile 1: $0;(0 grants)"}
+            ]
+          },
+          "transform": [{"calculate": "split(datum.note, ';')", "as": "lines"}],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": -18,
+            "font": "Plus Jakarta Sans",
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#B2182B"
+          },
+          "encoding": {
+            "x": {
+              "field": "Decile_Num",
+              "type": "ordinal",
+              "scale": {"domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+            },
+            "y": {"field": "y", "type": "quantitative"},
+            "text": {"field": "lines"}
+          }
+        }
+      ]
     },
-    "data": {"url": "data/nsw_everyone_can_play_clean.csv"},
-    "layer": [
-      {
-        "mark": {"type": "circle", "size": 95, "opacity": 0.75, "stroke": "#FFFFFF", "strokeWidth": 0.6},
-        "encoding": {
-          "x": {
-            "field": "Score",
-            "type": "quantitative",
-            "title": "Council ABS SEIFA Advantage Score (Lower = More Disadvantaged)",
-            "scale": {"domain": [880, 1180]}
-          },
-          "y": {
-            "field": "Amount",
-            "type": "quantitative",
-            "title": "Approved Grant Amount ($ AUD)",
-            "axis": {"format": "$,.0f"}
-          },
-          "color": {
-            "field": "Council_Cohort",
-            "type": "nominal",
-            "title": "Council Cohort",
-            "scale": {
-              "domain": ["Metropolitan", "Regional & Rural"],
-              "range": ["#0F766E", "#D95F02"]
-            }
-          },
-          "tooltip": [
-            {"field": "Project", "type": "nominal", "title": "Project"},
-            {"field": "Council", "type": "nominal", "title": "Council"},
-            {"field": "Amount", "type": "quantitative", "title": "Grant Amount ($)", "format": "$,.0f"},
-            {"field": "Year", "type": "ordinal", "title": "Funding Round"},
-            {"field": "Score", "type": "quantitative", "title": "SEIFA Score", "format": ".0f"},
-            {"field": "Decile", "type": "ordinal", "title": "SEIFA Decile"}
-          ]
+    {
+      "width": 620,
+      "height": 165,
+      "transform": [
+        {
+          "aggregate": [
+            {"op": "sum", "field": "Amount", "as": "Cell_Funding"},
+            {"op": "count", "as": "Cell_Grants"}
+          ],
+          "groupby": ["Decile_Num", "Year"]
+        },
+        {
+          "calculate": "'$' + format(datum.Cell_Funding / 1000, ',.0f') + 'k'",
+          "as": "Cell_Label"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Decile_Num",
+          "type": "ordinal",
+          "title": "Council ABS SEIFA Decile (1 = Most Disadvantaged, 10 = Most Advantaged)",
+          "scale": {"domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
+          "axis": {"labelAngle": 0, "labelFontWeight": "bold"}
+        },
+        "y": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Funding Round",
+          "sort": ["2018/19", "2019/20", "2020/21", "2021/22"]
         }
       },
-      {
-        "transform": [{"regression": "Amount", "on": "Score"}],
-        "mark": {
-          "type": "line",
-          "color": "#1E293B",
-          "strokeDash": [6, 4],
-          "strokeWidth": 2
+      "layer": [
+        {
+          "mark": {
+            "type": "rect",
+            "cornerRadius": 4,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 2
+          },
+          "encoding": {
+            "color": {
+              "field": "Cell_Funding",
+              "type": "quantitative",
+              "title": "Round Funding ($)",
+              "scale": {"scheme": "blues", "domain": [0, 1400000]},
+              "legend": {
+                "orient": "right",
+                "format": "$,.0s",
+                "titleFont": "Plus Jakarta Sans",
+                "titleFontSize": 11.5,
+                "labelFont": "Plus Jakarta Sans",
+                "labelFontSize": 10.5
+              }
+            },
+            "tooltip": [
+              {"field": "Decile_Num", "type": "ordinal", "title": "SEIFA Decile"},
+              {"field": "Year", "type": "ordinal", "title": "Funding Round"},
+              {"field": "Cell_Funding", "type": "quantitative", "title": "Total Approved ($)", "format": "$,.0f"},
+              {"field": "Cell_Grants", "type": "quantitative", "title": "Number of Grants"}
+            ]
+          }
         },
-        "encoding": {
-          "x": {"field": "Score", "type": "quantitative"},
-          "y": {"field": "Amount", "type": "quantitative"}
-        }
-      },
-      {
-        "data": {
-          "values": [
-            {
-              "x": 900,
-              "y": 440000,
-              "note": "Flat Allocation (R² = 0.0006):;Decile 1 received 0 grants, while;Decile 10 captured 25 grants ($3.44M)."
+        {
+          "mark": {
+            "type": "text",
+            "font": "Plus Jakarta Sans",
+            "fontSize": 10.5,
+            "fontWeight": "bold",
+            "align": "center",
+            "baseline": "middle"
+          },
+          "encoding": {
+            "text": {"field": "Cell_Label", "type": "nominal"},
+            "color": {
+              "condition": {"test": "datum.Cell_Funding > 700000", "value": "#FFFFFF"},
+              "value": "#1E293B"
             }
-          ]
-        },
-        "transform": [{"calculate": "split(datum.note, ';')", "as": "note_lines"}],
-        "mark": {
-          "type": "text",
-          "align": "left",
-          "fontSize": 11,
-          "fontWeight": "bold",
-          "color": "#D95F02"
-        },
-        "encoding": {
-          "x": {"field": "x", "type": "quantitative"},
-          "y": {"field": "y", "type": "quantitative"},
-          "text": {"field": "note_lines"}
+          }
         }
-      }
-    ],
-    "config": {"view": {"stroke": null}}
+      ]
+    }
+  ],
+  "resolve": {"scale": {"color": "independent"}},
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "labelFont": "Plus Jakarta Sans",
+      "labelFontSize": 11,
+      "labelColor": "#475569",
+      "titleFont": "Plus Jakarta Sans",
+      "titleFontSize": 12,
+      "titleFontWeight": "bold",
+      "titleColor": "#1E293B"
+    }
   }
+}

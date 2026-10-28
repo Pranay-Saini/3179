@@ -1,54 +1,73 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
-    "height": 340,
-    "title": {
-      "text": "Wheelchair Compliance Among Audited Playgrounds",
-      "subtitle": "10x10 unit proportion of wheelchair-audited sites (36% Yes, 22% Limited, 42% No)",
-      "font": "Merriweather",
-      "fontSize": 15,
-      "subtitleFont": "Plus Jakarta Sans",
-      "subtitleFontSize": 11.5,
-      "anchor": "start"
-    },
-    "data": {
-      "sequence": {"start": 0, "stop": 100, "as": "unit_id"}
-    },
-    "transform": [
-      {"calculate": "datum.unit_id % 10", "as": "col"},
-      {"calculate": "floor(datum.unit_id / 10)", "as": "row"},
-      {
-        "calculate": "datum.unit_id < 36 ? 'Verified Accessible: Yes (36% / 21 sites)' : (datum.unit_id < 58 ? 'Partial Access: Limited (22% / 13 sites)' : 'Inaccessible: No (42% / 24 sites)')",
-        "as": "Compliance_Tier"
-      }
-    ],
-    "mark": {
-      "type": "rect",
-      "cornerRadius": 4,
-      "stroke": "#FFFFFF",
-      "strokeWidth": 2.5
-    },
-    "encoding": {
-      "x": {"field": "col", "type": "ordinal", "axis": null},
-      "y": {"field": "row", "type": "ordinal", "sort": "descending", "axis": null},
-      "color": {
-        "field": "Compliance_Tier",
-        "type": "nominal",
-        "title": "Wheelchair Audit Outcome",
-        "scale": {
-          "domain": [
-            "Verified Accessible: Yes (36% / 21 sites)",
-            "Partial Access: Limited (22% / 13 sites)",
-            "Inaccessible: No (42% / 24 sites)"
-          ],
-          "range": ["#0F766E", "#F59E0B", "#E11D48"]
-        },
-        "legend": {"orient": "bottom", "direction": "vertical"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 340,
+  "title": {
+    "text": "Wheelchair Compliance Among Audited Playgrounds",
+    "subtitle": "10×10 unit proportion of wheelchair-audited sites (36% Yes, 22% Limited, 42% No)",
+    "font": "Merriweather",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "color": "#1E293B",
+    "subtitleFont": "Plus Jakarta Sans",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#475569",
+    "anchor": "start",
+    "offset": 12
+  },
+  "data": {
+    "sequence": {"start": 0, "stop": 100, "as": "unit_id"}
+  },
+  "transform": [
+    {"calculate": "datum.unit_id % 10", "as": "col"},
+    {"calculate": "floor(datum.unit_id / 10)", "as": "row"},
+    {
+      "calculate": "datum.unit_id < 36 ? 'Verified Accessible: Yes (36% / 21 sites)' : (datum.unit_id < 58 ? 'Partial Access: Limited (22% / 13 sites)' : 'Inaccessible: No (42% / 24 sites)')",
+      "as": "Compliance_Tier"
+    }
+  ],
+  "mark": {
+    "type": "rect",
+    "cornerRadius": 5,
+    "stroke": "#FFFFFF",
+    "strokeWidth": 3
+  },
+  "encoding": {
+    "x": {"field": "col", "type": "ordinal", "axis": null},
+    "y": {"field": "row", "type": "ordinal", "sort": "descending", "axis": null},
+    "color": {
+      "field": "Compliance_Tier",
+      "type": "nominal",
+      "title": "Wheelchair Audit Outcome",
+      "scale": {
+        "domain": [
+          "Verified Accessible: Yes (36% / 21 sites)",
+          "Partial Access: Limited (22% / 13 sites)",
+          "Inaccessible: No (42% / 24 sites)"
+        ],
+        "range": ["#2166AC", "#E69F00", "#B2182B"]
       },
-      "tooltip": [
-        {"field": "Compliance_Tier", "type": "nominal", "title": "Audit Outcome"},
-        {"calculate": "datum.unit_id + 1", "type": "quantitative", "title": "Percentile Square"}
-      ]
+      "legend": {
+        "orient": "right",
+        "direction": "vertical",
+        "titleFont": "Plus Jakarta Sans",
+        "titleFontSize": 14,
+        "titleFontWeight": "bold",
+        "titleColor": "#1E293B",
+        "labelFont": "Plus Jakarta Sans",
+        "labelFontSize": 13,
+        "labelColor": "#334155",
+        "labelLimit": 260,
+        "symbolSize": 320,
+        "symbolType": "square",
+        "rowPadding": 14,
+        "offset": 20
+      }
     },
-    "config": {"view": {"stroke": null}}
-  }
+    "tooltip": [
+      {"field": "Compliance_Tier", "type": "nominal", "title": "Audit Outcome"},
+      {"field": "unit_id", "type": "quantitative", "title": "Percentile Unit"}
+    ]
+  },
+  "config": {"view": {"stroke": null}}
+}

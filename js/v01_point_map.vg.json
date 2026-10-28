@@ -7,14 +7,18 @@
     "subtitle": "Spatial distribution across Australian states by urban classification (Click legend to highlight cohort)",
     "font": "Merriweather",
     "fontSize": 16,
+    "fontWeight": "bold",
+    "color": "#1E293B",
     "subtitleFont": "Plus Jakarta Sans",
     "subtitleFontSize": 12,
-    "anchor": "start"
+    "subtitleColor": "#475569",
+    "anchor": "start",
+    "offset": 12
   },
   "projection": {
     "type": "equirectangular",
     "center": [134, -28.5],
-    "scale": 750
+    "scale": 760
   },
   "layer": [
     {
@@ -44,8 +48,9 @@
       ],
       "mark": {
         "type": "circle",
+        "size": 36,
         "stroke": "#FFFFFF",
-        "strokeWidth": 0.3
+        "strokeWidth": 0.4
       },
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
@@ -56,11 +61,28 @@
           "title": "Geographic Cohort",
           "scale": {
             "domain": ["Metropolitan", "Regional & Rural"],
-            "range": ["#0F766E", "#D95F02"]
+            "range": ["#2166AC", "#B2182B"]
+          },
+          "legend": {
+            "orient": "top-right",
+            "fillColor": "#FFFFFF",
+            "strokeColor": "#CBD5E1",
+            "cornerRadius": 6,
+            "padding": 14,
+            "rowPadding": 8,
+            "titleFont": "Plus Jakarta Sans",
+            "titleFontSize": 14,
+            "titleFontWeight": "bold",
+            "titleColor": "#1E293B",
+            "labelFont": "Plus Jakarta Sans",
+            "labelFontSize": 13,
+            "labelColor": "#1E293B",
+            "symbolSize": 260,
+            "symbolOpacity": 0.95
           }
         },
         "opacity": {
-          "condition": {"param": "cohort_highlight", "value": 0.7},
+          "condition": {"param": "cohort_highlight", "value": 0.78},
           "value": 0.1
         },
         "tooltip": [
@@ -77,7 +99,7 @@
           {
             "lon": 151.5,
             "lat": -33.8,
-            "note": "Eastern Seaboard Concentration:;VIC, NSW, & QLD comprise 80.1%; of national sites."
+            "note": "Eastern Seaboard Concentration:;VIC, NSW, & QLD comprise 80.1%;of documented national sites."
           }
         ]
       },
@@ -87,9 +109,10 @@
         "align": "left",
         "dx": 14,
         "dy": -8,
+        "font": "Plus Jakarta Sans",
         "fontSize": 11.5,
         "fontWeight": "bold",
-        "color": "#0F172A"
+        "color": "#1E293B"
       },
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
