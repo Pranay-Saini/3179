@@ -1,10 +1,3 @@
-/* ================================================================
-   FIT3179 DV2 — aligned editorial layout
-   Drop in as css/style.css.
-   Sightline rule: section headings, chart-card outside edges,
-   conclusion and footer all share the same page-content x position.
-   ================================================================ */
-
 :root {
   --bg-page: #F8F9FA;
   --bg-card: #FFFFFF;
@@ -18,244 +11,177 @@
   --accent-coral: #B2182B;
   --accent-navy: #1E3A8A;
   --border-subtle: #E2E8F0;
-
-  /* Structural values, rather than independent ad-hoc indents. */
-  --page-gutter: 24px;
-  --chart-inset: 22px;
-  --story-gutter: 28px;
-  --row-gap: 24px;
 }
 
-*, *::before, *::after {
+* {
   box-sizing: border-box;
-}
-
-html {
-  min-width: 320px;
 }
 
 body {
   margin: 0;
-  background: var(--bg-page);
+  padding: 0;
+  background-color: var(--bg-page);
   color: var(--text-primary);
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
   line-height: 1.65;
-  /* No overflow-x:hidden: hiding an oversized Vega plot is not a fix. */
+  overflow-x: hidden;
 }
 
 .page-container {
-  width: 100%;
   max-width: 1200px;
-  margin-inline: auto;
-  padding: 0 var(--page-gutter) 48px;
+  margin: 0 auto;
+  padding: 0 24px 48px 24px;
 }
 
+/* Consistent Typography Hierarchy */
 h1, h2, h3, h4 {
-  margin-top: 0;
   font-family: 'Merriweather', Georgia, serif;
   color: var(--text-primary);
+  margin-top: 0;
   line-height: 1.3;
-  text-wrap: pretty;
 }
 
-/* ---------------------------------------------------------------
-   Hero & section hierarchy
-   --------------------------------------------------------------- */
 .hero-banner {
-  margin: 0 0 40px;
-  padding: 52px 32px;
-  border-radius: 0 0 14px 14px;
+  text-align: center;
+  padding: 56px 32px;
+  margin-bottom: 40px;
   background: linear-gradient(135deg, #0F172A 0%, #2166AC 100%);
   color: #FFFFFF;
-  text-align: center;
+  border-radius: 0 0 16px 16px;
 }
 
 .hero-tag {
-  margin-bottom: 12px;
-  color: #BFDBFE;
-  font-size: 0.78rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.11em;
+  letter-spacing: 2px;
+  color: #93C5FD;
+  margin-bottom: 12px;
 }
 
 .hero-banner h1 {
-  margin-bottom: 16px;
   color: #FFFFFF;
-  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-size: 2.5rem;
+  margin-bottom: 16px;
 }
 
 .subtitle {
   max-width: 760px;
   margin: 0 auto;
+  font-size: 1.08rem;
   color: #E2E8F0;
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-weight: 400;
 }
 
+/* Act Sections */
 .act-section {
-  margin: 0 0 48px;
-  padding: 28px 0 0;
-  border-top: 1px solid var(--border-subtle);
+  margin-bottom: 52px;
+  padding-top: 28px;
+  border-top: 2px solid var(--border-subtle);
 }
 
 .act-header {
-  width: 100%;
-  max-width: 880px;
-  margin: 0 0 24px;   /* No left/right inset. */
+  max-width: 840px;
+  margin-bottom: 24px;
 }
 
 .act-badge {
   display: inline-block;
-  margin-bottom: 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--accent-urban);
+  background: #DBEAFE;
   padding: 4px 10px;
   border-radius: 4px;
-  background: #DBEAFE;
-  color: var(--accent-urban);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
+  margin-bottom: 8px;
 }
 
 .act-header h2 {
-  margin: 0 0 10px;
-  font-size: clamp(1.4rem, 2.15vw, 1.7rem);
+  font-size: 1.7rem;
+  margin-bottom: 10px;
 }
 
 .act-intro {
-  max-width: 78ch;
-  margin: 0;
-  color: var(--text-secondary);
   font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
-/* ---------------------------------------------------------------
-   Grid and shared left/right sightlines
-   The .pure-g children retain PureCSS 1/3 and 2/3 sizing.
-   Avoid column gap on .pure-g: it can push 1/3 + 2/3 > 100%.
-   --------------------------------------------------------------- */
+/* Grid & Cards — Strict Sightline Alignment */
 .vis-row {
+  margin-bottom: 20px;
   align-items: stretch;
-  margin: 0 0 var(--row-gap);
-}
-
-.act-section > .vis-row:last-child {
-  margin-bottom: 0;
-}
-
-.vis-row > [class*="pure-u"] {
-  min-width: 0;
-}
-
-/* Stretch chart panels to row height when adjacent to a narrative. */
-.vis-row > [class*="pure-u"]:not(.narrative-col) {
-  display: flex;
-  flex-direction: column;
 }
 
 .vis-card {
-  flex: 1 1 auto;
-  min-width: 0;
-  margin: 0;         /* Removed the old 8px indentation on every side. */
-  padding: 20px var(--chart-inset);
+  background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
-  background: var(--bg-card);
+  padding: 20px 22px;
+  margin: 8px;
   box-shadow: 0 2px 6px rgba(15, 23, 42, 0.035);
+  height: calc(100% - 16px);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Captions now follow charts rather than float down. */
+  justify-content: space-between;
 }
 
-/* Narrative contents start on the outer page sightline on the left;
-   right-hand narrative contents get one intentional, even column gap. */
 .narrative-col {
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 0;
-  padding: 16px 0;
-}
-
-.vis-row > .narrative-col:first-child {
-  padding-right: var(--story-gutter);
-  padding-left: 0;
-}
-
-.vis-row > .narrative-col:last-child {
-  padding-right: 0;
-  padding-left: var(--story-gutter);
 }
 
 .narrative-col h3 {
-  margin: 0 0 12px;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
 }
 
 .narrative-col p {
   max-width: 62ch;
-  margin: 0 0 14px;
+  font-size: 0.96rem;
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.65;
-}
-
-.narrative-col p:last-child {
-  margin-bottom: 0;
-}
-
-/* Charts must not grow their flex columns or the entire page wider.
-   Vega's actual plotting dimensions are controlled by its specs/JS;
-   overflow is kept local as a small-screen fallback, not hidden. */
-.vis-container,
-.vis-container.vega-embed,
-.vis-container > .vega-embed {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
+  margin-top: 0;
+  margin-bottom: 14px;
 }
 
 .vis-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: #CBD5E1 transparent;
-}
-
-.vis-container.vega-embed,
-.vis-container > .vega-embed {
-  display: block;
-}
-
-#vis05,
-#vis05.vega-embed,
-#vis05 .vega-embed {
-  display: block;
   width: 100%;
 }
 
-/* V04 and V10 previously used a centered flex embed. Left alignment
-   produces a consistent plot-title sightline with the other charts. */
+/* Full Horizontal Space for Treemap (#vis05) */
+#vis05,
+#vis05.vega-embed,
+#vis05 .vega-embed {
+  width: 100% !important;
+  display: block !important;
+}
+
+/* Center Butterfly Chart & Multi-View Concats */
 #vis04.vega-embed,
 #vis04 .vega-embed,
 #vis10.vega-embed,
 #vis10 .vega-embed {
-  display: block;
-  width: 100%;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
 }
 
 .chart-caption {
-  margin: 14px 0 0;
-  padding-top: 12px;
-  border-top: 1px solid var(--border-subtle);
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  font-size: 0.86rem;
-  line-height: 1.6;
+  margin-top: 12px;
+  margin-bottom: 0;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-subtle);
 }
 
-/* ---------------------------------------------------------------
-   Consistent semantic text accents; preserve the original palette
-   --------------------------------------------------------------- */
+/* Design Token Text Highlights */
 .highlight-teal,
 .highlight-urban {
   color: var(--accent-urban);
@@ -279,196 +205,89 @@ h1, h2, h3, h4 {
 }
 
 .callout-box {
-  margin-top: 6px;
-  padding: 12px 16px;
-  border-left: 4px solid var(--accent-urban);
-  border-radius: 0 6px 6px 0;
   background: #F1F5F9;
-  color: var(--text-primary);
+  border-left: 4px solid var(--accent-urban);
+  padding: 12px 16px;
   font-size: 0.88rem;
+  color: var(--text-primary);
+  border-radius: 0 6px 6px 0;
+  margin-top: 4px;
 }
 
-/* Vega bind controls wrap naturally instead of expanding the page. */
-.vega-bindings,
+/* Vega-Lite Bind Controls (Sliders & Dropdowns) */
 .vega-bind {
-  max-width: 100%;
-}
-
-.vega-bind {
-  display: inline-block;
-  margin: 12px 16px 4px 0;
-  color: var(--text-secondary);
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.86rem;
+  margin-top: 10px;
+  display: inline-block;
+  margin-right: 20px;
 }
 
 .vega-bind-name {
-  margin-right: 6px;
-  color: var(--text-primary);
   font-weight: 600;
+  color: var(--text-primary);
+  margin-right: 6px;
 }
 
-.vega-bind select,
-.vega-bind input {
-  max-width: 100%;
-}
-
-/* ---------------------------------------------------------------
-   Synthesis and sources start on exactly the same outer sightline
-   --------------------------------------------------------------- */
+/* Conclusion Synthesis Section — Matching Page Annotations */
 .conclusion-section,
 .conclusion-card {
-  margin: 0;
-  padding: 28px 0 0; /* Removed original 20px horizontal padding. */
-  border: 0;
-  border-top: 1px solid var(--border-subtle);
-  border-radius: 0;
   background: transparent;
+  border: none;
+  border-radius: 0;
   box-shadow: none;
+  padding: 24px 20px 8px 20px;
+  margin: 32px 0 0 0;
 }
 
 .conclusion-section h3,
 .conclusion-card h3 {
-  margin: 0 0 12px;
-  color: var(--text-primary);
+  font-family: 'Merriweather', Georgia, serif;
   font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
 .conclusion-section p,
 .conclusion-card p {
-  max-width: 90ch;
-  margin: 0;
-  color: var(--text-secondary);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.96rem;
-  line-height: 1.7;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
 }
 
+/* Footer */
 .page-footer {
-  margin: 40px 0 0; /* Removed both 8px horizontal margins. */
-  padding: 30px 28px;
-  border-radius: 10px;
+  margin-top: 40px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 32px 28px;
   background: #0F172A;
   color: #CBD5E1;
-  font-size: 0.86rem;
-  line-height: 1.65;
-}
-
-.page-footer .pure-g > [class*="pure-u"] {
-  min-width: 0;
-}
-
-.page-footer .pure-g > :first-child {
-  padding-right: 24px;
-}
-
-.page-footer .pure-g > :last-child {
-  padding-left: 24px;
+  border-radius: 12px;
+  font-size: 0.88rem;
 }
 
 .page-footer h4 {
-  margin: 0 0 12px;
   color: #FFFFFF;
-  font-size: 1.02rem;
-}
-
-.page-footer p {
-  margin: 0 0 12px;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
 }
 
 .page-footer a {
-  color: #BFDBFE;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.page-footer a:hover,
-.page-footer a:focus-visible {
-  color: #FFFFFF;
+  color: #93C5FD;
+  text-decoration: none;
 }
 
 .source-list {
+  padding-left: 18px;
   margin: 0;
-  padding-left: 19px;
 }
 
 .source-list li {
-  margin-bottom: 7px;
-}
-
-.method-note {
-  margin-top: 16px !important;
-  color: #CBD5E1;
-  font-size: 0.82rem;
-  line-height: 1.6;
-}
-
-.method-note a {
-  color: #BFDBFE;
-}
-
-/* ---------------------------------------------------------------
-   Responsive: preserve outer grid; only deliberate inner gutters vary
-   --------------------------------------------------------------- */
-@media (max-width: 1023px) {
-  :root {
-    --page-gutter: 20px;
-    --chart-inset: 18px;
-    --story-gutter: 22px;
-    --row-gap: 20px;
-  }
-
-  .page-footer { padding: 26px 22px; }
-  .page-footer .pure-g > :first-child { padding-right: 16px; }
-  .page-footer .pure-g > :last-child { padding-left: 16px; }
-}
-
-@media (max-width: 767px) {
-  :root {
-    --page-gutter: 16px;
-    --chart-inset: 14px;
-    --story-gutter: 0px;
-    --row-gap: 20px;
-  }
-
-  .page-container { padding-bottom: 32px; }
-  .hero-banner { margin-bottom: 32px; padding: 38px 20px; }
-  .hero-banner h1 { font-size: clamp(1.55rem, 5vw, 2.05rem); }
-  .hero-tag { font-size: 0.68rem; letter-spacing: 0.08em; }
-  .subtitle { font-size: 0.94rem; }
-
-  .act-section { padding-top: 23px; margin-bottom: 36px; }
-  .act-header { margin-bottom: 18px; }
-  .act-header h2 { font-size: 1.38rem; }
-  .act-intro { font-size: 0.95rem; }
-
-  /* PureCSS stacks at <768px; narrative and charts now share x=0. */
-  .vis-row > .narrative-col:first-child,
-  .vis-row > .narrative-col:last-child {
-    padding: 8px 0 18px;
-  }
-
-  /* In chart-first rows, narrations belong below the card. */
-  .vis-row > [class*="pure-u"]:first-child:not(.narrative-col) + .narrative-col {
-    padding: 18px 0 4px;
-  }
-
-  .vis-card { padding: 16px var(--chart-inset); }
-  .narrative-col h3 { font-size: 1.13rem; }
-  .narrative-col p { font-size: 0.92rem; }
-  .chart-caption { font-size: 0.83rem; }
-
-  .conclusion-section,
-  .conclusion-card { padding-top: 24px; }
-
-  .page-footer { margin-top: 30px; padding: 24px 20px; }
-  .page-footer .pure-g > :first-child,
-  .page-footer .pure-g > :last-child { padding: 0; }
-  .page-footer .pure-g > :first-child { margin-bottom: 14px; }
-}
-
-@media (max-width: 420px) {
-  :root { --page-gutter: 12px; --chart-inset: 12px; }
-  .hero-banner { padding: 32px 16px; }
-  .act-header h2 { font-size: 1.27rem; }
-  .page-footer { padding: 22px 16px; }
+  margin-bottom: 6px;
 }
